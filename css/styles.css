@@ -1,0 +1,184 @@
+BODY {
+	font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+	background: url(../images/center_background.png) repeat-y center;
+	background-color: #81A594;
+	margin: 0px;
+	padding: 0px;
+	color: #000000;
+}
+
+A {
+	color: #000000;
+}
+
+TD {
+	vertical-align: top;
+}
+
+.PageContainer {
+	width: 620px;
+	margin: auto;
+	padding-bottom: 10px;
+}
+
+.MastheadBannerContainer {
+	width: 650px;
+	height: 257px;
+	margin: auto;
+}
+
+#Banner_AIC {
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+	font-size: x-large;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px;
+}
+
+#Banner_ChoirCamp {
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+	font-size: larger;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px;
+}
+
+#Banner_Dates {
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+	font-size: large;
+	text-align: center;
+	padding: 2px;
+}
+
+#Masthead_GroupImage {
+	width: 650px;
+	height: 257px; /* 257px; */
+	margin: auto;
+	display:block;
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray black black gray;
+}
+
+.BarContainer {
+	width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.Bar {
+	background-color: #00628B;
+	padding: 3px;
+	font-family: Verdana, Verdana, Geneva, sans-serif;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding-right: 30px;
+	border-right: 3px solid #81A594;
+}
+
+#FormsTitle {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#FormsInstructions {
+	font-size: smaller;
+	font-style: italic;
+}
+
+#FormsHeader {
+	font-size: small;
+	font-variant: small-caps;
+}
+
+#FormsTable {
+	border: solid 1px black;
+}
+
+#AcrobatReaderAdvisory {
+	font-size: smaller;
+}
+
+.FestivalDay {
+	font-family: Arial, Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+
+.FestivalDayEvent {
+	padding-left: 5px;
+}
+
+.FestivalDayTime {
+	text-align: right;
+}
+
+.FestivalDayDate {
+	font-weight: bold;
+}
+
+.ContactInformationSectionHeader {
+	text-align: right;
+	padding-right: 25px;
+}
+
+#WhereImage {
+	float: right;
+	margin-left: 0.16in;
+}
+
+#WhereImage img {
+	width: 192px;
+	height: 144px;
+	border: 1px solid #000000;
+}
+
+#WhereImage td {
+	text-align: right;
+}
+
+#WhereImage a {
+	font-size: smaller;
+}
+
+#WhenImage {
+	float: left;
+	width: 226px;
+	height: 168px;
+	margin-right: 0.16in;
+	border: 1px solid #000000;
+}
+
+#DrivingDirectionsLink {
+	float: right;
+	padding-right: 18px;
+}
+
+#Masthead_Links {
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+	text-align: center;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.SmallerMastheadLink {
+	font-size: 11pt;
+}
+
+#DonateButton {
+	position: relative;
+	top: -270px;
+	left: -46px;
+}
+
+P {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+@media print {
+	#DonateButton {
+		display: none;
+	}
+}

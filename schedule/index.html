@@ -1,0 +1,386 @@
+<html manifest="schedule.appcache">
+<head>
+<meta name="viewport" content="width=480">
+<title>Choir Camp Schedule</title>
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<style>
+    body {
+        font-size: larger;
+        margin: 0 0 5px 0;
+        font-family: Verdana, Geneva, sans-serif;
+    }
+
+    td {
+    	vertical-align: top;
+    }
+
+    .assignmentsTable { 
+        border-spacing: 0;
+        border-collapse: separate;
+    }
+
+	.timeContainer {
+        white-space: nowrap;
+		margin: 15px 0 15px 5px;
+	}
+
+	.assignmentsContainer {
+		margin-left: 10px;
+	}
+
+	.timeSlotContainer {
+        white-space: nowrap;
+	}
+
+	.inProgressTimeSlot td {
+		font-weight: bold;
+	}
+
+	.startingSoonTimeSlot td {
+		font-style: italic;
+	}
+
+    .footerNote {
+        color: gray;
+        margin: 15px 0 0 5px;
+        display: none;
+    }
+
+    .versionNote {
+        color: gray;
+        font-size: small;
+        margin: 15px 0 0 5px;
+        display: none;
+    }
+
+    .startingTimeContainer {
+    	max-height: 35px;
+    	height: 35px;
+    }
+
+    .timeSlotFirstRowCell {
+    	padding-top: 10px;
+    }
+
+    .timeSlotDescriptionContainer {
+        white-space: nowrap;
+    	font-size: 44pt;
+    	padding: 0 0 0 10px !important;
+    }
+
+    .assignmentsRow td {
+    	font-size: 24pt;
+    }
+
+    .inProgressSymbolContainer {
+        font-size: 64pt;
+        text-align: 'center';
+    }
+
+    .timeSlotTimesContainer {
+        text-align: right;
+        font-size: 28pt;
+        padding-right: 10px;
+        background-color: #BF00FF;
+    }
+
+    .inProgressTimeSlot {
+        background-color: #DD7FFF;
+    }
+
+    .timeSlotBoundary {
+    	background-color: black;
+    	max-height: 1px;
+    	height: 1px;
+    	margin: 15px 0;
+    }
+
+    .follow-scroll {
+        background-color: #FFFFFF;
+        padding: 3px;
+        border: 1px solid black;
+        display: none;
+        font-size: 18pt;
+        color: #BF00FF;
+    }
+
+    .title {
+    	font-size: 48pt;
+    }
+</style>
+</head>
+<body>
+<div id="all">
+	<div id="allAssignments" style="margin-top: 0px;"></div>
+</div>
+<div id="time" class="timeContainer"></div>
+<div class="footerNote">Reminder: This schedule is Mon-Thurs only.</div>
+<div class="versionNote">Version: 2016-06-15 19:25 (refresh twice online to update app)</div>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+
+var schedule = {
+    "timeSlots": [{
+    	"startTime": "0845"
+    	, "endTime": "0929"
+    	, "startTimeDisplay": "8:50"
+    	, "endTimeDisplay": "9:30"
+    	, "description": "Class (1st)"
+    	, "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Classroom", "GH-Show/Stage", ""]
+    }
+    , {
+    	"startTime": "0930"
+    	, "endTime": "1009"
+    	, "startTimeDisplay": " 9:35"
+    	, "endTimeDisplay": "10:15"
+    	, "description": "Class (2nd)"
+    	, "assignments": ["AB-Show/Stage", "CD-Gallery", "EG-Choir Room", "FH-Foyer", ""]
+    }
+    , {
+    	"startTime": "1010"
+    	, "endTime": "1024"
+    	, "startTimeDisplay": "10:15"
+    	, "endTimeDisplay": "10:30"
+    	, "description": "Snack"
+    	, "assignments": []
+    }
+    , {
+    	"startTime": "1025"
+    	, "endTime": "1109"
+    	, "startTimeDisplay": "10:30"
+    	, "endTimeDisplay": "11:10"
+    	, "description": "Class (3rd)"
+    	, "assignments": ["AB-Gallery", "CD-Show/Stage", "EF-Extra Stuff", "GH-Classroom", "Staff-Choir Room"]
+    }
+    , {
+    	"startTime": "1110"
+    	, "endTime": "1154"
+    	, "startTimeDisplay": "11:15"
+    	, "endTimeDisplay": "11:55"
+    	, "description": "Class (4th)"
+    	, "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Show/Stage", "GH-Extra Stuff"]
+    }
+    , {
+    	"startTime": "1155"
+    	, "endTime": "1239"
+    	, "startTimeDisplay": "12:00"
+    	, "endTimeDisplay": ""
+    	, "description": "Lunch"
+    	, "assignments": []
+    }
+    , {
+    	"startTime": "1240"
+    	, "endTime": "1324"
+    	, "startTimeDisplay": "12:45"
+    	, "endTimeDisplay": " 1:25"
+    	, "description": "Class (5th)"
+    	, "assignments": ["AB-Show/Stage", "CD-Gallery", "EG-Choir Room", "FH-Foyer"]
+    }
+    , {
+    	"startTime": "1325"
+    	, "endTime": "1409"
+    	, "startTimeDisplay": "1:30"
+    	, "endTimeDisplay": "2:10"
+    	, "description": "Class (6th)"
+    	, "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Classroom", "GH-Show/Stage", ""]
+    }
+    , {
+    	"startTime": "1410"
+    	, "endTime": "1449"
+    	, "startTimeDisplay": "2:15"
+    	, "endTimeDisplay": "2:55"
+    	, "description": "Class (7th)"
+    	, "assignments": ["AB-Gallery", "CD-Extra Stuff", "EF-Show/Stage", "GH-Classroom", "Staff-Choir Room"]
+    }
+    , {
+    	"startTime": "1450"
+    	, "endTime": "1554"
+    	, "startTimeDisplay": "2:55"
+    	, "endTimeDisplay": "4:00"
+    	, "description": "Break"
+    	, "assignments": ["Staff-Choir Room"]
+    }
+    , {
+    	"startTime": "1555"
+    	, "endTime": "1754"
+    	, "startTimeDisplay": "4:00"
+    	, "endTimeDisplay": "5:45"
+    	, "description": "Activities"
+    	, "assignments": []
+    }
+    , {
+    	"startTime": "1755"
+    	, "endTime": "1839"
+    	, "startTimeDisplay": "6:00"
+    	, "endTimeDisplay": "6:40"
+    	, "description": "Supper"
+    	, "assignments": []
+    }
+    , {
+    	"startTime": "1840"
+    	, "endTime": "1924"
+    	, "startTimeDisplay": "6:45"
+    	, "endTimeDisplay": "7:25"
+    	, "description": "Class (8th)"
+    	, "assignments": ["AB-Extra Stuff", "CD-Show/Stage", "EG-Choir Room", "FH-Foyer"]
+    }
+    , {
+    	"startTime": "1925"
+    	, "endTime": "1954"
+    	, "startTimeDisplay": "7:30"
+    	, "endTimeDisplay": ""
+    	, "description": "Evensong"
+    	, "assignments": []
+    }
+    , {
+    	"startTime": "1955"
+    	, "endTime": "2229"
+    	, "startTimeDisplay": "8:00"
+    	, "endTimeDisplay": ""
+    	, "description": "Activities"
+    	, "assignments": []
+    }]
+};
+
+var hoursAndMinutes;
+var lastHoursAndMinutes = "";
+var lastScrollToId = "";
+
+	function hasNonEmptyValue(input) {
+    	return input !== null && typeof input !== 'undefined' && input.replace(/\s/g, '').length > 0;
+	}
+
+(function () {
+	var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+	function getFormattedTime(fourDigitTime) {
+			fourDigitTime = String(fourDigitTime);
+	    var hours24 = parseInt(fourDigitTime.substring(0, 2),10);
+	    var hours = ((hours24 + 11) % 12) + 1;
+	    var amPm = hours24 > 11 ? 'PM' : 'AM';
+	    var minutes = fourDigitTime.substring(2);
+	    return hours + ':' + minutes; // + ' ' + amPm;
+	}
+
+	function getTimeSlotHtml(timeSlot, timeSlotContainerClassName, showInProgressSymbol) {
+		timeSlotContainerClassName = hasNonEmptyValue(timeSlotContainerClassName) ? timeSlotContainerClassName : '';
+		var result = '<tr id="'+timeSlot.startTime+'" class="'+timeSlotContainerClassName+'"><td class="timeSlotFirstRowCell startingTimeContainer timeSlotTimesContainer">' + timeSlot.startTimeDisplay + '</td><td rowspan="2" class="timeSlotFirstRowCell timeSlotDescriptionContainer">' + timeSlot.description + '<table class="assignmentsContainer">'
+		for (var i = 0; i < timeSlot.assignments.length; i++) {
+			var assignment = timeSlot.assignments[i];
+			if (hasNonEmptyValue(assignment)) {
+				var parts = assignment.split('-');
+				result = result + '<tr class="assignmentsRow"><td>' + parts[0] + '</td><td>: ' + parts[1]  + '</td></tr>';
+			}
+		}
+		result = result + '</table></td></tr><tr class="'+timeSlotContainerClassName+'"><td class="timeSlotTimesContainer">'+ timeSlot.endTimeDisplay + (showInProgressSymbol ? '<div class="inProgressSymbolContainer">&#x2713;</div>' : '') +'</td></tr>';
+		result = result + '<tr><td colspan="2"><div class="timeSlotBoundary"></div></td></tr>';
+		return result;
+	}
+
+	function numberIsGreaterThanZeroAndLessThanFifteen(number) {
+		return number > 0 && number < 15;
+	}
+
+	function showTimeSlot(timeSlot) {
+
+	}
+
+	function showTimeSlots(hour, minute) {
+		var allAssignmentsHtml = '<span class="title">Schedule</span><span class="follow-scroll"></span><table class="assignmentsTable">';
+		var scrollToId;
+		for (var i = 0; i < schedule.timeSlots.length; i++) {
+			var timeSlot = schedule.timeSlots[i];
+			var nowNumber = Number(String(hour)+String(minute))
+			var startNumber = Number(timeSlot.startTime)
+			var endNumber = Number(timeSlot.endTime)
+            var minutesUntilStart = startNumber - nowNumber
+			// var minutesSinceStart = nowNumber - startNumber
+			// var minutesUntilEnd = endNumber - nowNumber 
+			// var isJustStarting = numberIsGreaterThanZeroAndLessThanFifteen(minutesSinceStart)
+			var isInProgress = (startNumber <= nowNumber) && (nowNumber <= endNumber)
+			// var isEndingSoon = numberIsGreaterThanZeroAndLessThanFifteen(minutesUntilEnd)
+            var isStartingSoon = minutesUntilStart > 0 && minutesUntilStart <= 15;
+
+            var timeSlotContainerClassName = '';
+            var showInProgressSymbol = false;
+			if (isInProgress) {
+				timeSlotContainerClassName = 'inProgressTimeSlot';
+				showInProgressSymbol = true;
+				scrollToId = timeSlot.startTime;
+			} else if (isStartingSoon) {
+                timeSlotContainerClassName = 'startingSoonTimeSlot';
+            }
+
+			allAssignmentsHtml = allAssignmentsHtml + getTimeSlotHtml(timeSlot, timeSlotContainerClassName, showInProgressSymbol);
+		};
+		document.getElementById('allAssignments').innerHTML = allAssignmentsHtml + '</table>';
+		if (hasNonEmptyValue(scrollToId) && scrollToId !== lastScrollToId) {
+		    $('html, body').animate({
+		        scrollTop: $('#'+scrollToId).offset().top - 10
+		    }, 1000);
+		    lastScrollToId = scrollToId;
+		}
+	}
+
+    function checkTime(i) {
+        return (i < 10) ? "0" + i : i;
+    }
+
+	function showNow() {
+	    var element = $('.follow-scroll');
+
+	    // Space between element and top of screen (when scrolling)
+	    var topMargin = 86;
+
+	    // Should probably be set in CSS; but here just for emphasis
+	    element.css('position', 'relative');
+        var scrollTop = $(window).scrollTop();
+
+        element.html('<div>Now</div><div>'+getFormattedTime(hoursAndMinutes)+'</div>');
+	    var nowLeft = $('table.assignmentsTable').width() - $('.follow-scroll').width() - $('span.title').width() - 0;
+
+        element.stop(false, false).animate({
+            top: scrollTop < originalY
+                    ? 0
+                    : scrollTop - originalY + topMargin
+            , left: nowLeft
+        }, 0).css('display','inline-block');
+	}
+
+    function startTime() {
+    	var today = new Date();
+    	// today.setHours(today.getHours()+0);
+    	// today.setMinutes(today.getMinutes()-11);
+
+        var h = checkTime(today.getHours()),
+        m = checkTime(today.getMinutes()),
+        s = checkTime(today.getSeconds()),
+        dayNumber = today.getDay(),
+        day = days[today.getDay()];
+        hoursAndMinutes = String(h) + String(m)
+
+        // console.log('hoursAndMinutes: ' + hoursAndMinutes)
+        if (lastHoursAndMinutes !== hoursAndMinutes) {
+            // document.getElementById('time').innerHTML = 'Now: ' + getFormattedTime(hoursAndMinutes) + ' ' + day;
+            showTimeSlots(h, m);
+            showNow();
+            lastHoursAndMinutes = hoursAndMinutes;
+        }
+        //if (window.location.protocol.substring(0,4) === 'http') {
+        	t = setTimeout(function () {
+            	startTime()
+        	}, 500);
+    	//}
+    }
+    startTime();
+    $('.footerNote,.versionNote').show();
+
+	var originalY = 20; // $('.follow-scroll').offset().top;
+
+    $(window).on('scroll', function(event) {
+    	showNow();
+    });
+})();
+</script>
+</body>
+</html>
