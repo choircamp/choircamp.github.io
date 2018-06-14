@@ -597,9 +597,9 @@ var lastScrollToId = "";
 		var allAssignmentsHtml = '<span class="title">'+todayDisplayName+'</span><span class="follow-scroll"></span><table class="assignmentsTable">';
 		var scrollToId;
         var timeSlots = schedule[todayName]
+		var nowNumber = Number(String(hour)+String(minute))
 		for (var i = 0; i < timeSlots.length; i++) {
 			var timeSlot = timeSlots[i];
-			var nowNumber = Number(String(hour)+String(minute))
 			var startNumber = Number(timeSlot.startTime)
 			var endNumber = Number(timeSlot.endTime)
             var minutesUntilStart = startNumber - nowNumber
