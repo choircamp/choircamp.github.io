@@ -124,10 +124,11 @@
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var dayOfMonthOnWhichStaffArrives = 21;
 var today = new Date();
-
-var dayOfMonthOnWhichStaffArrives = 21;
-
 var params = new URL(new URL(location)).searchParams;
+today.setHours(params.get('hour') || today.getHours());
+today.setMinutes(params.get('minute') || today.getMinutes());
+
+
 var todayName = params.get('day') || days[today.getDay()];
 if (todayName === 'Saturday' && today.getDate() === dayOfMonthOnWhichStaffArrives && today.getMonth() == 6) {
 	todayName = 'SetupSaturday';
