@@ -603,11 +603,7 @@ var lastScrollToId = "";
 			var startNumber = Number(timeSlot.startTime)
 			var endNumber = Number(timeSlot.endTime)
             var minutesUntilStart = startNumber - nowNumber
-			// var minutesSinceStart = nowNumber - startNumber
-			// var minutesUntilEnd = endNumber - nowNumber 
-			// var isJustStarting = numberIsGreaterThanZeroAndLessThanFifteen(minutesSinceStart)
 			var isInProgress = (startNumber <= nowNumber) && (nowNumber <= endNumber)
-			// var isEndingSoon = numberIsGreaterThanZeroAndLessThanFifteen(minutesUntilEnd)
             var isStartingSoon = minutesUntilStart > 0 && minutesUntilStart <= 15;
 
             var timeSlotContainerClassName = '';
