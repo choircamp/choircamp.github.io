@@ -70,6 +70,7 @@
 
     .assignmentsRow td {
     	font-size: 24pt;
+        white-space: nowrap;
     }
 
     .inProgressSymbolContainer {
@@ -82,6 +83,7 @@
         font-size: 28pt;
         padding-right: 10px;
         background-color: #BF00FF;
+        white-space: nowrap;
     }
 
     .inProgressTimeSlot {
@@ -114,133 +116,435 @@
 	<div id="allAssignments" style="margin-top: 0px;"></div>
 </div>
 <div id="time" class="timeContainer"></div>
-<div class="footerNote">Reminder: This schedule is Mon-Thurs only.</div>
-<div class="versionNote">Version: 2016-06-15 19:25 (refresh twice online to update app)</div>
+<div class="footerNote"></div>
+<div class="versionNote">Version: 2018-06-14 13:35 (refresh twice online to update app)</div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 
+var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var today = new Date();
+today.setHours(today.getHours()-10);
+today.setMinutes(today.getMinutes()-11);
+
+var dayOfMonthOnWhichStaffArrives = 21;
+
+var params = new URL(new URL(location)).searchParams;
+var todayName = params.get('day') || days[today.getDay()];
+if (todayName === 'Saturday' && today.getDate() === dayOfMonthOnWhichStaffArrives && today.getMonth() == 6) {
+	todayName = 'SetupSaturday';
+}
+
 var schedule = {
-    "timeSlots": [{
-    	"startTime": "0845"
-    	, "endTime": "0929"
-    	, "startTimeDisplay": "8:50"
-    	, "endTimeDisplay": "9:30"
-    	, "description": "Class (1st)"
-    	, "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Classroom", "GH-Show/Stage", ""]
-    }
-    , {
-    	"startTime": "0930"
-    	, "endTime": "1009"
-    	, "startTimeDisplay": " 9:35"
-    	, "endTimeDisplay": "10:15"
-    	, "description": "Class (2nd)"
-    	, "assignments": ["AB-Show/Stage", "CD-Gallery", "EG-Choir Room", "FH-Foyer", ""]
-    }
-    , {
-    	"startTime": "1010"
-    	, "endTime": "1024"
-    	, "startTimeDisplay": "10:15"
-    	, "endTimeDisplay": "10:30"
-    	, "description": "Snack"
-    	, "assignments": []
-    }
-    , {
-    	"startTime": "1025"
-    	, "endTime": "1109"
-    	, "startTimeDisplay": "10:30"
-    	, "endTimeDisplay": "11:10"
-    	, "description": "Class (3rd)"
-    	, "assignments": ["AB-Gallery", "CD-Show/Stage", "EF-Extra Stuff", "GH-Classroom", "Staff-Choir Room"]
-    }
-    , {
-    	"startTime": "1110"
-    	, "endTime": "1154"
-    	, "startTimeDisplay": "11:15"
-    	, "endTimeDisplay": "11:55"
-    	, "description": "Class (4th)"
-    	, "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Show/Stage", "GH-Extra Stuff"]
-    }
-    , {
-    	"startTime": "1155"
-    	, "endTime": "1239"
-    	, "startTimeDisplay": "12:00"
-    	, "endTimeDisplay": ""
-    	, "description": "Lunch"
-    	, "assignments": []
-    }
-    , {
-    	"startTime": "1240"
-    	, "endTime": "1324"
-    	, "startTimeDisplay": "12:45"
-    	, "endTimeDisplay": " 1:25"
-    	, "description": "Class (5th)"
-    	, "assignments": ["AB-Show/Stage", "CD-Gallery", "EG-Choir Room", "FH-Foyer"]
-    }
-    , {
-    	"startTime": "1325"
-    	, "endTime": "1409"
-    	, "startTimeDisplay": "1:30"
-    	, "endTimeDisplay": "2:10"
-    	, "description": "Class (6th)"
-    	, "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Classroom", "GH-Show/Stage", ""]
-    }
-    , {
-    	"startTime": "1410"
-    	, "endTime": "1449"
-    	, "startTimeDisplay": "2:15"
-    	, "endTimeDisplay": "2:55"
-    	, "description": "Class (7th)"
-    	, "assignments": ["AB-Gallery", "CD-Extra Stuff", "EF-Show/Stage", "GH-Classroom", "Staff-Choir Room"]
-    }
-    , {
-    	"startTime": "1450"
-    	, "endTime": "1554"
-    	, "startTimeDisplay": "2:55"
-    	, "endTimeDisplay": "4:00"
-    	, "description": "Break"
-    	, "assignments": ["Staff-Choir Room"]
-    }
-    , {
-    	"startTime": "1555"
-    	, "endTime": "1754"
-    	, "startTimeDisplay": "4:00"
-    	, "endTimeDisplay": "5:45"
-    	, "description": "Activities"
-    	, "assignments": []
-    }
-    , {
-    	"startTime": "1755"
-    	, "endTime": "1839"
-    	, "startTimeDisplay": "6:00"
-    	, "endTimeDisplay": "6:40"
-    	, "description": "Supper"
-    	, "assignments": []
-    }
-    , {
-    	"startTime": "1840"
-    	, "endTime": "1924"
-    	, "startTimeDisplay": "6:45"
-    	, "endTimeDisplay": "7:25"
-    	, "description": "Class (8th)"
-    	, "assignments": ["AB-Extra Stuff", "CD-Show/Stage", "EG-Choir Room", "FH-Foyer"]
-    }
-    , {
-    	"startTime": "1925"
-    	, "endTime": "1954"
-    	, "startTimeDisplay": "7:30"
-    	, "endTimeDisplay": ""
-    	, "description": "Evensong"
-    	, "assignments": []
-    }
-    , {
-    	"startTime": "1955"
-    	, "endTime": "2229"
-    	, "startTimeDisplay": "8:00"
-    	, "endTimeDisplay": ""
-    	, "description": "Activities"
-    	, "assignments": []
+    "SetupSaturday": [{
+                "startTime": "0600"
+                , "endTime": "1314"
+                , "startTimeDisplay": "1 PM"
+                , "endTimeDisplay": ""
+                , "description": "Hugs/Unload"
+                , "assignments": ["-Move/Setup until...", "-3PM Staff Meeting!", "-Find a job! :)"]
+            }, {
+                "startTime": "1315"
+                , "endTime": "1454"
+                , "startTimeDisplay": "1 PM"
+                , "endTimeDisplay": ""
+                , "description": "Setup"
+                , "assignments": ["Choir Rm-Greg, Charlie,Mike,Mark", "Pianos-(previous line)", "Drama Rm-Sarah S,Anna S", "Handbells-Cindy,Debby,Floyd,Teresa", "Art Rm-Diana", "Office/Library-Charlie,Lance,Linda J,Billie,Marthe", "Kitchen-Marthe,Clem,Debby", "Rooms:Boys-J.B.,Greg", "Rooms:Girls-Louise,Cindy,Linda K", "Registrations-Floyd,Sarah K", "Supplies/Tables-Anyone! (You?)", "What else?-Who else?", ""]
+            }, {
+                "startTime": "1455"
+                , "endTime": "1519"
+                , "startTimeDisplay": "3 PM"
+                , "endTimeDisplay": ""
+                , "description": "Staff Meeting"
+                , "assignments": ["-Centenary Foyer", ""]
+            }, {
+                "startTime": "1520"
+                , "endTime": "1654"
+                , "startTimeDisplay": "Until"
+                , "endTimeDisplay": "5 PM"
+                , "description": "Setup"
+                , "assignments": ["Name Tags-", "Photos-", "Music/Programs-", "T--Shirts-", "Handbell Music-Cindy,Debby,Floyd,Teresa", "Folders-", ""]
+            }, {
+                "startTime": "1655"
+                , "endTime": "1754"
+                , "startTimeDisplay": " 5 PM"
+                , "endTimeDisplay": ""
+                , "description": "Swim/Unpack"
+                , "assignments": [""]
+            }, {
+                "startTime": "1755"
+                , "endTime": "1854"
+                , "startTimeDisplay": "6 PM"
+                , "endTimeDisplay": ""
+                , "description": "Dinner"
+                , "assignments": ["-Where?", ""]
+            }, {
+                "startTime": "1855"
+                , "endTime": "1924"
+                , "startTimeDisplay": "7 PM"
+                , "endTimeDisplay": ""
+                , "description": "Rehearse"
+                , "assignments": ["-Choir Room", ""]
+            }, {
+                "startTime": "1925"
+                , "endTime": "2200"
+                , "startTimeDisplay": "Until"
+                , "endTimeDisplay": "10 PM"
+                , "description": "Swim"
+                , "assignments": [""]
+    }],
+    "Sunday": [{
+                "startTime": "0800"
+                , "endTime": "0854"
+                , "startTimeDisplay": "8 AM"
+                , "endTimeDisplay": ""
+                , "description": "Breakfast"
+                , "assignments": ["-Where?", ""]
+            }, {
+                "startTime": "0855"
+                , "endTime": "0954"
+                , "startTimeDisplay": "9 AM"
+                , "endTimeDisplay": ""
+                , "description": "Staff Meeting / Rehearsal"
+                , "assignments": ["-Centenary", ""]
+            }, {
+                "startTime": "0955"
+                , "endTime": "1039"
+                , "startTimeDisplay": "10 AM"
+                , "endTimeDisplay": ""
+                , "description": "Fr. Chuck - Holy Eucharist"
+                , "assignments": ["-Coury House", ""]
+            }, {
+                "startTime": "1040"
+                , "endTime": "1154"
+                , "startTimeDisplay": "10:45"
+                , "endTimeDisplay": ""
+                , "description": "Subiaco Mass"
+                , "assignments": ["-Church of St. Benedict", ""]
+            }, {
+                "startTime": "1155"
+                , "endTime": "1254"
+                , "startTimeDisplay": "Noon"
+                , "endTimeDisplay": ""
+                , "description": "Lunch"
+                , "assignments": ["-Cafeteria", ""]
+            }, {
+                "startTime": "1255"
+                , "endTime": "1354"
+                , "startTimeDisplay": "1 PM"
+                , "endTimeDisplay": ""
+                , "description": "Finish / Rest"
+                , "assignments": ["-Assignment / Dorm", ""]
+            }, {
+                "startTime": "1355"
+                , "endTime": "1654"
+                , "startTimeDisplay": "2 PM"
+                , "endTimeDisplay": ""
+                , "description": "Camp Registration"
+                , "assignments": ["2:30 PM-Swim tests", "4:30 PM-Dorms/change", ""]
+            }, {
+                "startTime": "1655"
+                , "endTime": "1754"
+                , "startTimeDisplay": "5 PM"
+                , "endTimeDisplay": ""
+                , "description": "Orientation"
+                , "assignments": ["-Centenary Theater", ""]
+            }, {
+                "startTime": "1755"
+                , "endTime": "1839"
+                , "startTimeDisplay": "6:00"
+                , "endTimeDisplay": ""
+                , "description": "Dinner"
+                , "assignments": ["-Cafeteria"]
+            }, {
+                "startTime": "1840"
+                , "endTime": "1924"
+                , "startTimeDisplay": "6:45"
+                , "endTimeDisplay": "7:25"
+                , "description": "Class"
+                , "assignments": ["AB-Extra Stuff", "CD-Show/Stage", "EG-Choir Room", "FH-Foyer"]
+            }, {
+                "startTime": "1925"
+                , "endTime": "1954"
+                , "startTimeDisplay": "7:30"
+                , "endTimeDisplay": "7:55"
+                , "description": "Evensong"
+                , "assignments": ["-Abbey Church"]
+            }, {
+                "startTime": "1955"
+                , "endTime": "2054"
+                , "startTimeDisplay": "8 PM"
+                , "endTimeDisplay": ""
+                , "description": "Talent Show"
+                , "assignments": ["-Centenary Theater"]
+            }, {
+                "startTime": "2055"
+                , "endTime": "2154"
+                , "startTimeDisplay": "9 PM"
+                , "endTimeDisplay": ""
+                , "description": "Swim"
+                , "assignments": ["AC-Dorms instead", "BD-Dorms 9:30"]
+            }, {
+                "startTime": "2155"
+                , "endTime": "2224"
+                , "startTimeDisplay": "10:00"
+                , "endTimeDisplay": "10:25"
+                , "description": "Teen Time"
+                , "assignments": ["EFGH-Church Steps"]
+            }, {
+                "startTime": "2225"
+                , "endTime": "2259"
+                , "startTimeDisplay": "10:30"
+                , "endTimeDisplay": ""
+                , "description": "Dorms"
+                , "assignments": ["11:00-Lights Out"]
+    }],
+    "Monday": [{
+                "startTime": "0845"
+                , "endTime": "0929"
+                , "startTimeDisplay": "8:50"
+                , "endTimeDisplay": "9:30"
+                , "description": "Class (1st)"
+                , "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Classroom", "GH-Show/Stage", ""]
+            }
+            , {
+                "startTime": "0930"
+                , "endTime": "1009"
+                , "startTimeDisplay": " 9:35"
+                , "endTimeDisplay": "10:15"
+                , "description": "Class (2nd)"
+                , "assignments": ["AB-Show/Stage", "CD-Gallery", "EG-Choir Room", "FH-Foyer", ""]
+            }
+            , {
+                "startTime": "1010"
+                , "endTime": "1024"
+                , "startTimeDisplay": "10:15"
+                , "endTimeDisplay": "10:30"
+                , "description": "Snack"
+                , "assignments": []
+            }
+            , {
+                "startTime": "1025"
+                , "endTime": "1109"
+                , "startTimeDisplay": "10:30"
+                , "endTimeDisplay": "11:10"
+                , "description": "Class (3rd)"
+                , "assignments": ["AB-Gallery", "CD-Show/Stage", "EF-Extra Stuff", "GH-Classroom", "Staff-Choir Room"]
+            }
+            , {
+                "startTime": "1110"
+                , "endTime": "1154"
+                , "startTimeDisplay": "11:15"
+                , "endTimeDisplay": "11:55"
+                , "description": "Class (4th)"
+                , "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Show/Stage", "GH-Extra Stuff"]
+            }
+            , {
+                "startTime": "1155"
+                , "endTime": "1239"
+                , "startTimeDisplay": "12:00"
+                , "endTimeDisplay": ""
+                , "description": "Lunch"
+                , "assignments": []
+            }
+            , {
+                "startTime": "1240"
+                , "endTime": "1324"
+                , "startTimeDisplay": "12:45"
+                , "endTimeDisplay": " 1:25"
+                , "description": "Class (5th)"
+                , "assignments": ["AB-Show/Stage", "CD-Gallery", "EG-Choir Room", "FH-Foyer"]
+            }
+            , {
+                "startTime": "1325"
+                , "endTime": "1409"
+                , "startTimeDisplay": "1:30"
+                , "endTimeDisplay": "2:10"
+                , "description": "Class (6th)"
+                , "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Classroom", "GH-Show/Stage", ""]
+            }
+            , {
+                "startTime": "1410"
+                , "endTime": "1449"
+                , "startTimeDisplay": "2:15"
+                , "endTimeDisplay": "2:55"
+                , "description": "Class (7th)"
+                , "assignments": ["AB-Gallery", "CD-Extra Stuff", "EF-Show/Stage", "GH-Classroom", "Staff-Choir Room"]
+            }
+            , {
+                "startTime": "1450"
+                , "endTime": "1554"
+                , "startTimeDisplay": "2:55"
+                , "endTimeDisplay": "4:00"
+                , "description": "Break"
+                , "assignments": ["Staff-Choir Room"]
+            }
+            , {
+                "startTime": "1555"
+                , "endTime": "1754"
+                , "startTimeDisplay": "4:00"
+                , "endTimeDisplay": "5:45"
+                , "description": "Activities"
+                , "assignments": []
+            }
+            , {
+                "startTime": "1755"
+                , "endTime": "1839"
+                , "startTimeDisplay": "6:00"
+                , "endTimeDisplay": "6:40"
+                , "description": "Supper"
+                , "assignments": []
+            }
+            , {
+                "startTime": "1840"
+                , "endTime": "1924"
+                , "startTimeDisplay": "6:45"
+                , "endTimeDisplay": "7:25"
+                , "description": "Class (8th)"
+                , "assignments": ["AB-Extra Stuff", "CD-Show/Stage", "EG-Choir Room", "FH-Foyer"]
+            }
+            , {
+                "startTime": "1925"
+                , "endTime": "1954"
+                , "startTimeDisplay": "7:30"
+                , "endTimeDisplay": ""
+                , "description": "Evensong"
+                , "assignments": []
+            }
+            , {
+                "startTime": "1955"
+                , "endTime": "2229"
+                , "startTimeDisplay": "8:00"
+                , "endTimeDisplay": ""
+                , "description": "Activities"
+                , "assignments": []
+    }],
+    "Friday": [{
+                "startTime": "0845"
+                , "endTime": "1114"
+                , "startTimeDisplay": "8:50"
+                , "endTimeDisplay": "11:20"
+                , "description": "Abbey Church"
+                , "assignments": ["ABCD-Steps Rehearse"
+                	, "--AB-Bells"
+                	, "EFGH-Gallery Rehearse"
+                	, "--GH-Bells (after AB)"
+                	, "-Then..."
+                	, "All-Steps, then Stalls"
+                	, "ABCD-Rehearse, then break"
+                	, "EFGH-Rehearse"
+                	, "ABCD-Return from break"
+                	, "-Then..."
+                	, "--CD-Bells"
+                	, "-(or right after lunch)"
+                	, "-And don't forget..."
+                	, "-Whatever else! :)"
+                	, "-Exit Church by 11:20!"
+                	]
+            }, {
+                "startTime": "1115"
+                , "endTime": "1154"
+                , "startTimeDisplay": "11:20"
+                , "endTimeDisplay": "11:55"
+                , "description": "Centenary"
+                , "assignments": ["ABCD-Foyer"
+                	, "EFGH-Choir Room"
+                	, "Counselors-Stage"
+                	]
+    		}, {
+                "startTime": "1155"
+                , "endTime": "1239"
+                , "startTimeDisplay": "12:00"
+                , "endTimeDisplay": ""
+                , "description": "Lunch"
+                , "assignments": []
+    		}, {
+                "startTime": "1240"
+                , "endTime": "1254"
+                , "startTimeDisplay": "12:45"
+                , "endTimeDisplay": "Quick"
+                , "description": "Church"
+                , "assignments": ["Bells-Rehearse"
+                	, "- if needed! Otherwise..."
+                	]
+    		}, {
+                "startTime": "1255"
+                , "endTime": "1754"
+                , "startTimeDisplay": "12:45"
+                , "endTimeDisplay": "Until"
+                , "description": "Centenary"
+                , "assignments": ["All-Show"
+                	, "-As long as it takes! :)"
+                	, "-...then rest until..."
+                	]
+    		}, {
+                "startTime": "1755"
+                , "endTime": "1839"
+                , "startTimeDisplay": "6:00"
+                , "endTimeDisplay": "6:40"
+                , "description": "Supper"
+                , "assignments": []
+    }],
+    "Saturday": [{
+                "startTime": "0730"
+                , "endTime": "0754"
+                , "startTimeDisplay": " 7:30"
+                , "endTimeDisplay": ""
+                , "description": "Breakfast"
+                , "assignments": ["-Cafeteria"]
+            }, {
+                "startTime": "0935"
+                , "endTime": "1124"
+                , "startTimeDisplay": " 9:40"
+                , "endTimeDisplay": ""
+                , "description": "Holy Eucharist"
+                , "assignments": ["-Abbey Church"]
+            }, {
+                "startTime": "1125"
+                , "endTime": "1209"
+                , "startTimeDisplay": "11:30"
+                , "endTimeDisplay": ""
+                , "description": "Picnic"
+                , "assignments": ["-Abbey Grounds"]
+            }, {
+                "startTime": "1210"
+                , "endTime": "1324"
+                , "startTimeDisplay": "12:20"
+                , "endTimeDisplay": ""
+                , "description": "Places!"
+                , "assignments": ["12:30-Show!"]
+            }, {
+                "startTime": "1325"
+                , "endTime": "1334"
+                , "startTimeDisplay": ""
+                , "endTimeDisplay": ""
+                , "description": "Yayyy! :)"
+                , "assignments": ["-We did it!", "-(briefest pause...)", "-Ok. Back to work!"]
+            }, {
+                "startTime": "1335"
+                , "endTime": "1554"
+                , "startTimeDisplay": "Until"
+                , "endTimeDisplay": "Done"
+                , "description": "Teardown"
+                , "assignments": ["-Pianos Away", "-Stage Restored", "-Risers Away", "-Gallery Restored", "-Bells Stowed", "-Foyer Restored", "-Dorms Cleaned", "-Fleet Packed", "-Kitchen Cleaned", "-etc, etc (ask!)"]
+            }, {
+                "startTime": "1555"
+                , "endTime": "1754"
+                , "startTimeDisplay": ""
+                , "endTimeDisplay": ""
+                , "description": "Pool"
+                , "assignments": ["-Refreshments!", "-Dubious pride!", "-Start planning..."]
+            }, {
+                "startTime": "1755"
+                , "endTime": "2000"
+                , "startTimeDisplay": ""
+                , "endTimeDisplay": ""
+                , "description": "Farewell!"
+                , "assignments": ["-Drive Safe!", "-THANK YOU!!!!11"]
     }]
 };
+schedule['Tuesday'] = schedule['Monday'];
+schedule['Wednesday'] = schedule['Monday'];
+schedule['Thursday'] = schedule['Monday'];
 
 var hoursAndMinutes;
 var lastHoursAndMinutes = "";
@@ -251,7 +555,6 @@ var lastScrollToId = "";
 	}
 
 (function () {
-	var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
 	function getFormattedTime(fourDigitTime) {
 			fourDigitTime = String(fourDigitTime);
@@ -268,8 +571,9 @@ var lastScrollToId = "";
 		for (var i = 0; i < timeSlot.assignments.length; i++) {
 			var assignment = timeSlot.assignments[i];
 			if (hasNonEmptyValue(assignment)) {
+                assignment = assignment.replace('--','#####')
 				var parts = assignment.split('-');
-				result = result + '<tr class="assignmentsRow"><td>' + parts[0] + '</td><td>: ' + parts[1]  + '</td></tr>';
+				result = result + '<tr class="assignmentsRow"><td>' + parts[0].replace('#####','-') + '</td><td>' + (parts[0].length > 0 ? ': ' : '') + parts[1].replace('#####','-')  + '</td></tr>';
 			}
 		}
 		result = result + '</table></td></tr><tr class="'+timeSlotContainerClassName+'"><td class="timeSlotTimesContainer">'+ timeSlot.endTimeDisplay + (showInProgressSymbol ? '<div class="inProgressSymbolContainer">&#x2713;</div>' : '') +'</td></tr>';
@@ -286,10 +590,15 @@ var lastScrollToId = "";
 	}
 
 	function showTimeSlots(hour, minute) {
-		var allAssignmentsHtml = '<span class="title">Schedule</span><span class="follow-scroll"></span><table class="assignmentsTable">';
+		var todayDisplayName = todayName;
+		if (todayDisplayName === 'SetupSaturday') {
+			todayDisplayName = 'Saturday';
+		}
+		var allAssignmentsHtml = '<span class="title">'+todayDisplayName+'</span><span class="follow-scroll"></span><table class="assignmentsTable">';
 		var scrollToId;
-		for (var i = 0; i < schedule.timeSlots.length; i++) {
-			var timeSlot = schedule.timeSlots[i];
+        var timeSlots = schedule[todayName]
+		for (var i = 0; i < timeSlots.length; i++) {
+			var timeSlot = timeSlots[i];
 			var nowNumber = Number(String(hour)+String(minute))
 			var startNumber = Number(timeSlot.startTime)
 			var endNumber = Number(timeSlot.endTime)
@@ -347,21 +656,17 @@ var lastScrollToId = "";
         }, 0).css('display','inline-block');
 	}
 
+    var hoursAndMinutes;
+
     function startTime() {
-    	var today = new Date();
-    	// today.setHours(today.getHours()+0);
-    	// today.setMinutes(today.getMinutes()-11);
 
         var h = checkTime(today.getHours()),
         m = checkTime(today.getMinutes()),
         s = checkTime(today.getSeconds()),
-        dayNumber = today.getDay(),
-        day = days[today.getDay()];
+        dayNumber = today.getDay();
         hoursAndMinutes = String(h) + String(m)
 
-        // console.log('hoursAndMinutes: ' + hoursAndMinutes)
         if (lastHoursAndMinutes !== hoursAndMinutes) {
-            // document.getElementById('time').innerHTML = 'Now: ' + getFormattedTime(hoursAndMinutes) + ' ' + day;
             showTimeSlots(h, m);
             showNow();
             lastHoursAndMinutes = hoursAndMinutes;
