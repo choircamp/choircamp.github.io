@@ -117,9 +117,12 @@
 </div>
 <div id="time" class="timeContainer"></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 2018-06-26 11:46 (refresh twice online to update app)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 2018-06-26 13:27 (refresh twice online to update app)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
+if (location.protocol != 'https:') { // enforce HTTPS
+    location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+}
 
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var dayOfMonthOnWhichStaffArrives = 21;
