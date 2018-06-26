@@ -148,14 +148,14 @@ var schedule = {
                 , "startTimeDisplay": "1 PM"
                 , "endTimeDisplay": ""
                 , "description": "Setup"
-                , "assignments": ["Choir Rm-Greg, Charlie,Mike,Mark", "Pianos-(previous line)", "Drama Rm-Sarah S,Anna S", "Handbells-Cindy,Debby,Floyd,Teresa", "Art Rm-Diana", "Office/Library-Charlie,Lance,Linda J,Billie,Marthe", "Kitchen-Marthe,Clem,Debby", "Rooms:Boys-J.B.,Greg", "Rooms:Girls-Louise,Cindy,Linda K", "Registrations-Floyd,Sarah K", "Supplies/Tables-Anyone! (You?)", "What else?-Who else?", ""]
+                , "assignments": ["Choir Rm-Greg, Charlie,Mike,Mark", "Pianos-(previous line)", "Drama Rm-Sarah S,Anna S,Emily", "Handbells-Cindy,Debby,Floyd,Teresa", "Art Rm-Diana", "Office/Library-Charlie,Lance,Linda J,Billie,Marthe", "Kitchen-Marthe,Clem,Debby", "Rooms:Boys-J.B.,Greg", "Rooms:Girls-Louise,Cindy", "Registrations-Floyd,Charlie,Billie,Cindy", "Supplies/Tables-Anyone! (You?)<br/>&nbsp;&nbsp;-- Setup Foyer for Registration", "What else?-<em>Who</em> else?", ""]
             }, {
                 "startTime": "1455"
                 , "endTime": "1519"
                 , "startTimeDisplay": "3 PM"
                 , "endTimeDisplay": ""
                 , "description": "Staff Meeting"
-                , "assignments": ["-Centenary Foyer", ""]
+                , "assignments": ["-Choir Room", ""]
             }, {
                 "startTime": "1520"
                 , "endTime": "1654"
@@ -183,7 +183,7 @@ var schedule = {
                 , "startTimeDisplay": "7 PM"
                 , "endTimeDisplay": ""
                 , "description": "Rehearse"
-                , "assignments": ["-Choir Room", ""]
+                , "assignments": ["-Choir Room", "", "-Finish Up (Photos on windows)", ""]
             }, {
                 "startTime": "1925"
                 , "endTime": "2200"
@@ -198,14 +198,14 @@ var schedule = {
                 , "startTimeDisplay": "8 AM"
                 , "endTimeDisplay": ""
                 , "description": "Breakfast"
-                , "assignments": ["-Where?", ""]
+                , "assignments": ["-Cafeteria (Main)", ""]
             }, {
                 "startTime": "0855"
                 , "endTime": "0954"
                 , "startTimeDisplay": "9 AM"
                 , "endTimeDisplay": ""
                 , "description": "Staff Meeting / Rehearsal"
-                , "assignments": ["-Centenary", ""]
+                , "assignments": ["-Choir Room", ""]
             }, {
                 "startTime": "0955"
                 , "endTime": "1039"
@@ -419,27 +419,30 @@ var schedule = {
                 , "assignments": []
     }],
     "Friday": [{
+                "startTime": "0805"
+                , "endTime": "0844"
+                , "startTimeDisplay": "After"
+                , "endTimeDisplay": "Dorm"
+                , "description": "Move Bells"
+                , "assignments": ["-Move Bells/Setup"]
+            }, {
                 "startTime": "0845"
                 , "endTime": "1114"
                 , "startTimeDisplay": "8:50"
                 , "endTimeDisplay": "11:20"
                 , "description": "Abbey Church"
-                , "assignments": ["ABCD-Steps Rehearse"
-                	, "--AB-Bells"
-                	, "EFGH-Gallery Rehearse"
-                	, "--GH-Bells (after AB)"
-                	, "-Then..."
-                	, "All-Steps, then Stalls"
-                	, "ABCD-Rehearse, then break"
-                	, "EFGH-Rehearse"
-                	, "ABCD-Return from break"
-                	, "-Then..."
-                	, "--CD-Bells"
-                	, "-(or right after lunch)"
-                	, "-And don't forget..."
-                	, "-Whatever else! :)"
-                	, "-Exit Church by 11:20!"
-                	]
+                , "assignments": ["ABCD-Alter Steps Rehearse"
+                    , "EFGH-Gallery Rehearse"
+                    , "AB-Bells Rehearse"
+                    , "GH-Bells Rehearse"
+                    , "CDEF-Bells after Lunch"
+                    , "All-Alter Steps Rehearse"
+                    , "All-Choir Stalls Rehearse"
+                    , "ABCD-Break"
+                    , "EFGH-Stalls Rehearse"
+                    , "-Exit Church by 11:20!"
+                    , "-All to Centenary"
+                    ]
             }, {
                 "startTime": "1115"
                 , "endTime": "1154"
@@ -452,37 +455,60 @@ var schedule = {
                 	]
     		}, {
                 "startTime": "1155"
-                , "endTime": "1239"
+                , "endTime": "1229"
                 , "startTimeDisplay": "12:00"
                 , "endTimeDisplay": ""
                 , "description": "Lunch"
-                , "assignments": []
+                , "assignments": ["CDEF-Go first!"]
     		}, {
-                "startTime": "1240"
+                "startTime": "1230"
                 , "endTime": "1254"
-                , "startTimeDisplay": "12:45"
+                , "startTimeDisplay": "12:30"
                 , "endTimeDisplay": "Quick"
                 , "description": "Church"
-                , "assignments": ["Bells-Rehearse"
-                	, "- if needed! Otherwise..."
+                , "assignments": ["CD-Bells Rehearse"
+                	, "EF-Bells Rehearse"
                 	]
     		}, {
                 "startTime": "1255"
                 , "endTime": "1754"
-                , "startTimeDisplay": "12:45"
+                , "startTimeDisplay": "1 PM"
                 , "endTimeDisplay": "Until"
                 , "description": "Centenary"
                 , "assignments": ["All-Show"
                 	, "-As long as it takes! :)"
-                	, "-...then rest until..."
+                    , "-...then rest..."
+                    , "-&nbsp;(or maybe swim/rehearse?)"
+                    , "-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...until..."
                 	]
     		}, {
                 "startTime": "1755"
                 , "endTime": "1839"
                 , "startTimeDisplay": "6:00"
-                , "endTimeDisplay": "6:40"
+                , "endTimeDisplay": ""
                 , "description": "Supper"
                 , "assignments": []
+            }, {
+                "startTime": "1840"
+                , "endTime": "1924"
+                , "startTimeDisplay": "6:40"
+                , "endTimeDisplay": ""
+                , "description": "Class"
+                , "assignments": []
+            }, {
+                "startTime": "1925"
+                , "endTime": "2009"
+                , "startTimeDisplay": "7:30"
+                , "endTimeDisplay": ""
+                , "description": "Evensong"
+                , "assignments": []
+            }, {
+                "startTime": "2010"
+                , "endTime": "2359"
+                , "startTimeDisplay": "8:15"
+                , "endTimeDisplay": ""
+                , "description": "Swim"
+                , "assignments": ["-All"]
     }],
     "Saturday": [{
                 "startTime": "0730"
@@ -490,7 +516,14 @@ var schedule = {
                 , "startTimeDisplay": " 7:30"
                 , "endTimeDisplay": ""
                 , "description": "Breakfast"
-                , "assignments": ["-Cafeteria"]
+                , "assignments": ["-Cafeteria", "-T--Shirts", "-Dismiss early"]
+            }, {
+                "startTime": "0825"
+                , "endTime": "0934"
+                , "startTimeDisplay": " 8:30"
+                , "endTimeDisplay": ""
+                , "description": "Camp Photo"
+                , "assignments": ["-8:30 Sharp!", "All-Abbey Church Steps", "-On time! <strong>PLEASE!</strong> Or", "-we waste rehearsal time!"]
             }, {
                 "startTime": "0935"
                 , "endTime": "1124"
