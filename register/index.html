@@ -13,13 +13,14 @@ pageTracker._trackPageview();
 	<script src="https://code.jquery.com/jquery-1.3.2.min.js" integrity="sha256-yDcKLQUDWenVBazEEeb0V6SbITYKIebLySKbrTp2eJk=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-	var campYear = "2018"; // note: make sure links to PDFs have correct year (and remember: you still have to manually edit the Paypal pricing info each year, if it changes)
+	var campYear = "2018"; // note: check PDF links and Paypal pricing
+	$(function(){
+		//$('#checkBackSoon').show();
+		//$('#openForAll').show();
+		//$('#closedForGirls').show();
+		$('#closedForAll').show();
+	});
 </script>
-<!--
-	<script type="text/javascript">
-		alert('Registration for Choir Camp ' + campYear + ' has closed for GIRLS!\n\nSome slots are available for BOYS!')
-	</script>
--->
 </head>
 <body>
 <div class="PageContainer">
@@ -27,42 +28,26 @@ pageTracker._trackPageview();
 <div id="Banner_ChoirCamp">Choir Camp</div>
 <div id="Banner_Dates">Registration Forms and Online Payment</div>
 </div>
+<div id="checkBackSoon" style="display: none;">
+	<div class="BarContainer"><span class="Bar">REGISTRATION</span></div>
+	<div class="PageContainer"><p>Check back soon for registration forms for Choir Camp <script type="text/javascript">document.write(campYear);</script>!</p></div>
+</div>
+<div id="closedForAll" style="display: none;">
+	<div class="BarContainer"><span class="Bar">REGISTRATION</span></div>
+	<div class="PageContainer"><p>AIC Choir Camp <script type="text/javascript">document.write(campYear);</script> is full. Registration has closed.</p></div>
+</div>
+<div id="closedForGirls" style="display: none;">
+	<div class="BarContainer"><span class="Bar">REGISTRATION</span></div>
+	<div class="PageContainer"><p>Registration for Choir Camp <script type="text/javascript">document.write(campYear);</script> has closed for <strong>GIRLS</strong>! Some slots are available for <strong>BOYS</strong>!</p></div>
+</div>
+<div id="openForAll" style="display: none;">
 <div class="BarContainer"><span class="Bar">WHAT</span></div>
 <div class="PageContainer">
   <p>Use this page to print registration and medical forms for camp (see below).  After you print them, these forms must be submitted via postal mail.  They may not be faxed, emailed, or submitted via this website.</p>
   <p>There are two ways to send in your payment: 1) include it with your postal mail or 2) make a payment here using Paypal (see below).</p>
   <p>If you have any questions or feedback, please see the <a href="../#ContactInformation" target="_blank">Contact Information on our homepage</a>.</p>
 </div>
-
-<div class="BarContainer"><span class="Bar">REGISTRATION FORMS</span></div>
-
-
-
-
-
-
-
-
-<!-- <div class="PageContainer"><p>Check back soon for registration forms for Choir Camp <script type="text/javascript">document.write(campYear);</script>!</p></div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="PageContainer"><p>Registration for Choir Camp <script type="text/javascript">document.write(campYear);</script> has closed.</p></div>-->
-<!--<div class="PageContainer"><p>Registration for Choir Camp <script type="text/javascript">document.write(campYear);</script> has closed for <strong>GIRLS</strong>! Some slots are available for <strong>BOYS</strong>!</p></div>-->
-
-
-	
+  <div class="BarContainer"><span class="Bar">REGISTRATION FORMS</span></div>
   <div class="PageContainer">
   <p>You may use <a href="http://get.adobe.com/reader/" target="_blank">Adobe Acrobat Reader</a> to print these documents.</p>
   <p>
@@ -140,7 +125,7 @@ Arkadelphia, AR 71923
 </div>
 </div>
 
--->
+</div>
 
 
 
