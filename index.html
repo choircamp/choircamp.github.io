@@ -15,6 +15,10 @@ pageTracker._trackPageview();
 var campYear = "2018"
 var campFirstDay = "July 22"
 var campLastDay = "July 28"
+$(function(){
+  //$('#closedForAll').show();
+  //$('#mailCall').show();
+});
 </script>
 <title>Arkansas Interfaith Conference Choir Camp</title>
 <link rel="stylesheet" href="css/styles.css" type="text/css">
@@ -36,23 +40,25 @@ var campLastDay = "July 28"
      <!-- | <a href="party/" class="SmallerMastheadLink">party</a> -->
      | <a href="donate/" class="SmallerMastheadLink">donate</a>
 </div>
-<!--
-<div class="PageContainer" style="display: block;">
-	Registration for Choir Camp <script type="text/javascript">document.write(campYear);</script> has closed for <strong>GIRLS</strong>! Some slots are available for <strong>BOYS</strong>!
+<div id="closedForAll" style="display: none;">
+  <div class="BarContainer"><span class="Bar">REGISTRATION</span></div>
+  <div class="PageContainer" style="display: block;">
+  	<p>AIC Choir Camp <script type="text/javascript">document.write(campYear);</script> is full. Registration has closed.</p>
+  </div>
 </div>
--->
-<!--
-<div class="PageContainer" style="display: block;">
-	<br />Choir Camp <script type="text/javascript">document.write(campYear);</script> has started at beautiful Subiaco!  Campers really, really enjoy receiving letters during the week!
-    <blockquote>
-    Camper's Name
-    <br />AIC Choir Camp
-    <br />Subiaco Abbey
-    <br />Subiaco, AR 72865
-    </blockquote>
-	Come join us on Saturday, July 26th for Festival Day (see details below)!
+<div id="mailCall" style="display: none;">
+  <div class="BarContainer"><span class="Bar">MAIL CALL!</span></div>
+  <div class="PageContainer" style="display: block;">
+  	Choir Camp <script type="text/javascript">document.write(campYear);</script> has started at beautiful Subiaco!  Campers really, really enjoy receiving letters during the week!
+      <blockquote>
+      Camper's Name
+      <br />AIC Choir Camp
+      <br />Subiaco Abbey
+      <br />Subiaco, AR 72865
+      </blockquote>
+  	Come join us on Saturday, <script type="text/javascript">document.write(campLastDay);</script> for Festival Day (see details below)!
+  </div>
 </div>
--->
 <div class="BarContainer"><span class="Bar">WHAT</span></div>
 <div class="PageContainer">
 	<p>Established in 1976 by Trinity Episcopal Cathedral, and sponsored by the Arkansas Interfaith Conference of Churches and Synagogues, Choir Camp offers an intensive music program with classes in <b>choral singing</b>, <b>handbells</b>, <b>liturgy</b>, <b>Broadway song &amp; dance</b>, <b>history</b>, <b>poetry</b> and <b>art</b>. This camp aims to provide a healthy balance between work and play.</p>
