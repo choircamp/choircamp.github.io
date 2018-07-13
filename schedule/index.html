@@ -121,6 +121,7 @@
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol != 'https:') { // enforce HTTPS
+if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
     location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
 }
 
