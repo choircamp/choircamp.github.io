@@ -117,7 +117,7 @@
 </div>
 <div id="time" class="timeContainer"></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 2018-07-26 19:20 (refresh twice online to update app)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 2018-07-26 23:31 (refresh twice online to update app)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -419,7 +419,7 @@ var schedule = {
                 , "description": "Activities"
                 , "assignments": []
     }],
-    "Friday": [{
+    "Friday_Church_in_the_morning_AND_Show_in_the_afternoon": [{
                 "startTime": "0805"
                 , "endTime": "0844"
                 , "startTimeDisplay": "After"
@@ -511,16 +511,22 @@ var schedule = {
                 , "description": "Swim"
                 , "assignments": ["-All"]
     }],
-    "FridaySwitched": [
+    "Friday": [
             {
-                "startTime": "0805"
-                , "endTime": "1154"
+                "startTime": "0850"
+                , "endTime": "1144"
                 , "startTimeDisplay": "8:50"
                 , "endTimeDisplay": ""
                 , "description": "Centenary"
-                , "assignments": ["All-Show"
-                    , "-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...until..."
-                    ]
+                , "assignments": ["All-Show"]
+            }
+            , {
+                "startTime": "1145"
+                , "endTime": "1154"
+                , "startTimeDisplay": "After"
+                , "endTimeDisplay": "Fnrl"
+                , "description": "Move Bells"
+                , "assignments": ["-Move Bells/Setup"]
             }
             , {
                 "startTime": "1155"
@@ -531,42 +537,12 @@ var schedule = {
                 , "assignments": ["-Staged release.","-Who goes first?"]
             }
             , {
-                "startTime": "1240"
-                , "endTime": "1250"
-                , "startTimeDisplay": "After"
-                , "endTimeDisplay": "Lunch"
-                , "description": "Move Bells"
-                , "assignments": ["-Move Bells/Setup"]
-            }
-            , {
                 "startTime": "1251"
-                , "endTime": "1519"
-                , "startTimeDisplay": "12:45"
-                , "endTimeDisplay": "3:20"
-                , "description": "Abbey Church"
-                , "assignments": ["ABCD-Alter Steps Rehearse"
-                    , "EFGH-Gallery Rehearse"
-                    , "AB-Bells Rehearse"
-                    , "GH-Bells Rehearse"
-                    , "CDEF-Bells after Lunch"
-                    , "All-Alter Steps Rehearse"
-                    , "All-Choir Stalls Rehearse"
-                    , "ABCD-Break"
-                    , "EFGH-Stalls Rehearse"
-                    , "-Exit Church by 11:20!"
-                    , "-All to Centenary"
-                    ]
-            }
-            , {
-                "startTime": "1520"
                 , "endTime": "1554"
-                , "startTimeDisplay": "3:20"
-                , "endTimeDisplay": "3:55"
-                , "description": "Centenary"
-                , "assignments": ["ABCD-Foyer"
-                    , "EFGH-Choir Room"
-                    , "Counselors-Stage"
-                    ]
+                , "startTimeDisplay": "12:45"
+                , "endTimeDisplay": "4:00"
+                , "description": "Abbey Church"
+                , "assignments": ["All-Start in Choir Stalls"]
             }
             , {
                 "startTime": "1555"
@@ -574,7 +550,7 @@ var schedule = {
                 , "startTimeDisplay": "4:00"
                 , "endTimeDisplay": ""
                 , "description": "Needed"
-                , "assignments": ["-Whatever needed", "- until dinner", "- rest?", "- swim?", "- rehearse?"]
+                , "assignments": ["-Whatever needed", "- until dinner:", "- -- rest?", "- -- swim?", "- -- rehearse?", "- -- <em>twist an ankle?!</em>"]
             }
             , {
                 "startTime": "1755"
@@ -603,7 +579,7 @@ var schedule = {
             , {
                 "startTime": "2010"
                 , "endTime": "2359"
-                , "startTimeDisplay": "8:15"
+                , "startTimeDisplay": "Then"
                 , "endTimeDisplay": ""
                 , "description": "Swim"
                 , "assignments": ["-All"]
