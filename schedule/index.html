@@ -137,9 +137,12 @@ var dayOfMonthOnWhichStaffArrives = 20;
 
 setToday();
 
-var todayName = params.get('day') || days[today.getDay()];
+var todayName = days[today.getDay()];
 if (today.getDate() <= dayOfMonthOnWhichStaffArrives && today.getMonth() == 6) {
 	todayName = 'SetupSaturday';
+}
+if (params.get('day')) {
+    todayName = params.get('day');
 }
 
 var schedule = {
