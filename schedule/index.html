@@ -117,7 +117,7 @@
 </div>
 <div id="time" class="timeContainer"></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 2018-07-26 23:31 (refresh twice online to update app)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 2019-07-17 23:12 (refresh twice online to update app)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -133,12 +133,12 @@ function setToday() {
 }
 
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-var dayOfMonthOnWhichStaffArrives = 21;
+var dayOfMonthOnWhichStaffArrives = 20;
 
 setToday();
 
 var todayName = params.get('day') || days[today.getDay()];
-if (todayName === 'Saturday' && today.getDate() === dayOfMonthOnWhichStaffArrives && today.getMonth() == 6) {
+if (today.getDate() <= dayOfMonthOnWhichStaffArrives && today.getMonth() == 6) {
 	todayName = 'SetupSaturday';
 }
 
@@ -156,21 +156,21 @@ var schedule = {
                 , "startTimeDisplay": "1 PM"
                 , "endTimeDisplay": ""
                 , "description": "Setup"
-                , "assignments": ["Choir Rm-Greg, Charlie,Mike,Mark", "Pianos-(previous line)", "Drama Rm-Sarah S,Anna S,Emily", "Handbells-Cindy,Debby,Floyd,Teresa", "Art Rm-Diana", "Office/Library-Charlie,Lance,Linda J,Billie,Marthe", "Kitchen-Marthe,Clem,Debby", "Rooms:Boys-J.B.,Greg", "Rooms:Girls-Louise,Cindy", "Registrations-Floyd,Charlie,Billie,Cindy", "Supplies/Tables-Anyone! (You?)<br/>&nbsp;&nbsp;-- Setup Foyer for Registration", "What else?-<em>Who</em> else?", ""]
+                , "assignments": ["Choir Rm-Jeannie,Jack,Thomas,Alexander", "Choir Rm-Rylan,Carson,Britton,Justin,Greg", "Drama Rm-Sarah,Anna,Emily", "Stage-JB", "Pianos-Guys move (check with</br>&nbsp;&nbsp;&nbsp;Charlie/Jack/Jeannie FIRST)", "Handbells-Cindy,Sarah,Cari,Teresa,Debby</br>&nbsp;&nbsp;&nbsp;(boys:help move bells and tables)", "Art Rm-Diana,Rachel", "Office/Lib-Charlie,Lance,Linda J", "Kitchen-Marthe,Clem,Debby,Grace", "Nurses Sta-Sarah</br>&nbsp;&nbsp;&nbsp;(need two assistants)</br>&nbsp;&nbsp;&nbsp;(medical records looked through)</br>&nbsp;&nbsp;&nbsp;(several special diet)</br>&nbsp;&nbsp;&nbsp;(find which forms missing)", "Heard-J.B.,Greg", "Abbey/Fuhr-Louise,Cindy,Molly,Counselors", "Reg.&Setup-Cindy,Sarah,Lance,Marthe", "Move supplies,</br>tables,chairs,risers-Anyone (You?)<br>&nbsp;&nbsp;&nbsp;&nbsp;-- Setup Foyer for Reg.", "What else?-<em>Who</em> else?", ""]
             }, {
                 "startTime": "1455"
                 , "endTime": "1519"
                 , "startTimeDisplay": "3 PM"
                 , "endTimeDisplay": ""
                 , "description": "Staff Meeting"
-                , "assignments": ["-Choir Room", ""]
+                , "assignments": ["-Choir Room (Centenary)"]
             }, {
                 "startTime": "1520"
                 , "endTime": "1654"
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "5 PM"
                 , "description": "Setup"
-                , "assignments": ["Name Tags-", "Photos-", "Music/Programs-", "T--Shirts-", "Handbell Music-Cindy,Debby,Floyd,Teresa", "Folders-", ""]
+                , "assignments": ["Name/Rm Tags-Counselors+", "Photo Gallery-Diana,Rachel,Counselors+", "Music Books-Caroline,Jack,Thomas,Jeannie", "T--Shirts-Linda J,Marthe,+", "Handbell Music-Cindy,Sarah,Teresa,Mike J</br>&nbsp;&nbsp;&nbsp;Cari,Debby+"]
             }, {
                 "startTime": "1655"
                 , "endTime": "1754"
@@ -190,8 +190,8 @@ var schedule = {
                 , "endTime": "1924"
                 , "startTimeDisplay": "7 PM"
                 , "endTimeDisplay": ""
-                , "description": "Rehearse"
-                , "assignments": ["-Choir Room", "", "-Finish Up (Photos on windows)", ""]
+                , "description": "Staff Meeting/Rehearse"
+                , "assignments": ["-Choir Room", "", "-Finish Up (what's left?)", ""]
             }, {
                 "startTime": "1925"
                 , "endTime": "2200"
