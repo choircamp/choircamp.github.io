@@ -117,7 +117,7 @@
 </div>
 <div id="time" class="timeContainer"></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 2019-07-18 12:25 (refresh twice with Internet connection to update schedule)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 2019-07-18 13:55 (refresh with Internet connection to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -429,18 +429,18 @@ var schedule = {
                 , "description": "Activities"
                 , "assignments": []
     }],
-    "Friday_Church_in_the_morning_AND_Show_in_the_afternoon": [{
+    "Friday": [{
                 "startTime": "0805"
                 , "endTime": "0844"
                 , "startTimeDisplay": "After"
                 , "endTimeDisplay": "Dorm"
-                , "description": "Move Bells"
-                , "assignments": ["-Move Bells/Setup"]
+                , "description": "Chapel"
+                , "assignments": ["-Church Steps"]
             }, {
                 "startTime": "0845"
-                , "endTime": "1114"
-                , "startTimeDisplay": "8:50"
-                , "endTimeDisplay": "11:20"
+                , "endTime": "1154"
+                , "startTimeDisplay": "Until"
+                , "endTimeDisplay": "Lunch"
                 , "description": "Abbey Church"
                 , "assignments": ["ABCD-Alter Steps Rehearse"
                     , "EFGH-Gallery Rehearse"
@@ -451,20 +451,8 @@ var schedule = {
                     , "All-Choir Stalls Rehearse"
                     , "ABCD-Break"
                     , "EFGH-Stalls Rehearse"
-                    , "-Exit Church by 11:20!"
-                    , "-All to Centenary"
                     ]
             }, {
-                "startTime": "1115"
-                , "endTime": "1154"
-                , "startTimeDisplay": "11:20"
-                , "endTimeDisplay": "11:55"
-                , "description": "Centenary"
-                , "assignments": ["ABCD-Foyer"
-                	, "EFGH-Choir Room"
-                	, "Counselors-Stage"
-                	]
-    		}, {
                 "startTime": "1155"
                 , "endTime": "1229"
                 , "startTimeDisplay": "12:00"
@@ -521,7 +509,7 @@ var schedule = {
                 , "description": "Swim"
                 , "assignments": ["-All"]
     }],
-    "Friday": [
+    "Friday_Show_in_the_morning_AND_Church_in_the_afternoon": [
             {
                 "startTime": "0850"
                 , "endTime": "1144"
