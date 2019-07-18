@@ -117,7 +117,7 @@
 </div>
 <div id="time" class="timeContainer"></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 2019-07-17 23:12 (refresh twice online to update app)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 2019-07-18 11:45 (refresh twice with Internet connection to update schedule)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -159,7 +159,7 @@ var schedule = {
                 , "startTimeDisplay": "1 PM"
                 , "endTimeDisplay": ""
                 , "description": "Setup"
-                , "assignments": ["Choir Rm-Jeannie,Jack,Thomas,Alexander", "Choir Rm-Rylan,Carson,Britton,Justin,Greg", "Drama Rm-Sarah,Anna,Emily", "Stage-JB", "Pianos-Guys move (check with</br>&nbsp;&nbsp;&nbsp;Charlie/Jack/Jeannie FIRST)", "Handbells-Cindy,Sarah,Cari,Teresa,Debby</br>&nbsp;&nbsp;&nbsp;(boys:help move bells and tables)", "Art Rm-Diana,Rachel", "Office/Lib-Charlie,Lance,Linda J", "Kitchen-Marthe,Clem,Debby,Grace", "Nurses Sta-Sarah</br>&nbsp;&nbsp;&nbsp;(need two assistants)</br>&nbsp;&nbsp;&nbsp;(medical records looked through)</br>&nbsp;&nbsp;&nbsp;(several special diet)</br>&nbsp;&nbsp;&nbsp;(find which forms missing)", "Heard-J.B.,Greg", "Abbey/Fuhr-Louise,Cindy,Molly,Counselors", "Reg.&Setup-Cindy,Sarah,Lance,Marthe", "Move supplies,</br>tables,chairs,risers-Anyone (You?)<br>&nbsp;&nbsp;&nbsp;&nbsp;-- Setup Foyer for Reg.", "What else?-<em>Who</em> else?", ""]
+                , "assignments": ["Choir Rm-Jeannie,Jack,Thomas,Alexander", "Choir Rm-Rylan,Carson,Britton,Justin,Greg", "Drama Rm-Sarah,Anna,Emily", "Stage-JB,Mike J", "Pianos-Guys move (check with</br>&nbsp;&nbsp;&nbsp;Charlie/Jack/Jeannie FIRST)", "Handbells-Cindy,Sarah,Cari,Teresa,Debby</br>&nbsp;&nbsp;&nbsp;(boys:help move bells and tables)", "Art Rm-Diana,Rachel", "Office/Lib-Charlie,Lance,Linda J", "Kitchen-Marthe,Clem,Debby,Grace", "Nurses Sta-Sarah</br>&nbsp;&nbsp;&nbsp;(need two assistants)</br>&nbsp;&nbsp;&nbsp;(medical records looked through)</br>&nbsp;&nbsp;&nbsp;(several special diet)</br>&nbsp;&nbsp;&nbsp;(find which forms missing)", "Heard-J.B.,Greg", "Abbey/Fuhr-Louise,Cindy,Molly,Counselors", "Reg.&Setup-Cindy,Sarah,Lance,Marthe", "Move supplies,</br>tables,chairs,risers-Anyone (You?)<br>&nbsp;&nbsp;&nbsp;&nbsp;-- Setup Foyer for Reg.", "What else?-<em>Who</em> else?", ""]
             }, {
                 "startTime": "1455"
                 , "endTime": "1519"
@@ -187,7 +187,7 @@ var schedule = {
                 , "startTimeDisplay": "6 PM"
                 , "endTimeDisplay": ""
                 , "description": "Dinner"
-                , "assignments": ["-Where?", ""]
+                , "assignments": ["-Cafeteria", ""]
             }, {
                 "startTime": "1855"
                 , "endTime": "1924"
@@ -209,7 +209,7 @@ var schedule = {
                 , "startTimeDisplay": "8 AM"
                 , "endTimeDisplay": ""
                 , "description": "Breakfast"
-                , "assignments": ["-Cafeteria (Main)", ""]
+                , "assignments": ["-Cafeteria", ""]
             }, {
                 "startTime": "0855"
                 , "endTime": "0954"
@@ -217,6 +217,13 @@ var schedule = {
                 , "endTimeDisplay": ""
                 , "description": "Staff Meeting / Rehearsal"
                 , "assignments": ["-Choir Room", ""]
+            }, {
+                "startTime": "0955"
+                , "endTime": "1039"
+                , "startTimeDisplay": "10 AM"
+                , "endTimeDisplay": ""
+                , "description": "Finish Jobs"
+                , "assignments": ["-Learn Choir Music", ""]
             }, {
                 "startTime": "1040"
                 , "endTime": "1154"
@@ -251,7 +258,7 @@ var schedule = {
                 , "startTimeDisplay": "5 PM"
                 , "endTimeDisplay": ""
                 , "description": "Orientation"
-                , "assignments": ["-Centenary Theater", ""]
+                , "assignments": ["-Centenary Theater", "-Counselors: On stage", "-Staff: Seats up front", "-Who are you?", "-What do you do?"]
             }, {
                 "startTime": "1755"
                 , "endTime": "1839"
@@ -275,18 +282,18 @@ var schedule = {
                 , "assignments": ["-Abbey Church"]
             }, {
                 "startTime": "1955"
-                , "endTime": "2054"
+                , "endTime": "2024"
                 , "startTimeDisplay": "8 PM"
                 , "endTimeDisplay": ""
                 , "description": "Talent Show"
                 , "assignments": ["-Centenary Theater"]
             }, {
-                "startTime": "2055"
+                "startTime": "2025"
                 , "endTime": "2154"
-                , "startTimeDisplay": "9 PM"
+                , "startTimeDisplay": "8:30"
                 , "endTimeDisplay": ""
                 , "description": "Swim"
-                , "assignments": ["AC-Dorms instead", "BD-Dorms 9:30"]
+                , "assignments": ["AC-Dorms 9:00", "BD-Dorms 9:30"]
             }, {
                 "startTime": "2155"
                 , "endTime": "2224"
@@ -340,7 +347,7 @@ var schedule = {
                 , "startTimeDisplay": "11:15"
                 , "endTimeDisplay": "11:55"
                 , "description": "Class (4th)"
-                , "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Show/Stage", "GH-Extra Stuff"]
+                , "assignments": ["AC-Choir Room", "BD-Foyer", "EF-Show/Stage", "GH-Extra Stuff", "-&nbsp;&nbsp;(Hold EFGH<br/>&nbsp;&nbsp;until Noon)"]
             }
             , {
                 "startTime": "1155"
@@ -348,7 +355,7 @@ var schedule = {
                 , "startTimeDisplay": "12:00"
                 , "endTimeDisplay": ""
                 , "description": "Lunch"
-                , "assignments": []
+                , "assignments": [""]
             }
             , {
                 "startTime": "1240"
