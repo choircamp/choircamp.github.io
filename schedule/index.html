@@ -46,10 +46,25 @@
         display: none;
     }
 
+    .dayPicker {
+        margin: 25px 0 0 5px;
+        display: none;
+    }
+
+    .dayPicker a {
+        background-color: #568B22;
+        color: white;
+        padding: 1.5em;
+        margin: 0.3em;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
     .versionNote {
         color: gray;
         font-size: small;
-        margin: 15px 0 0 5px;
+        margin: 15px 0 0 5px; /* margin-top if dayPicker is ever used: 55px */
         display: none;
     }
 
@@ -99,7 +114,7 @@
 
     .follow-scroll {
         color: #FFFFFF; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color */
-        background-color: #568B22; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color */
+        background-color: #568B22; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color, and should be same as 'dayPicker a' */
         padding: 3px;
         border: 1px solid black;
         display: none;
@@ -116,8 +131,9 @@
 	<div id="allAssignments" style="margin-top: 0px;"></div>
 </div>
 <div id="time" class="timeContainer"></div>
+<div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 2019-07-18 13:55 (refresh with Internet connection to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 2019-07-21 01:11 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -143,6 +159,19 @@ if (today.getDate() <= dayOfMonthOnWhichStaffArrives && today.getMonth() == 6) {
 }
 if (params.get('day')) {
     todayName = params.get('day');
+}
+
+if (todayName === 'Monday' || todayName === 'Tuesday' || todayName === 'Wednesday' || todayName === 'Thursday') {
+    $('#MondayLink').hide();
+}
+if (todayName === 'Sunday') {
+    $('#SundayLink').hide();
+}
+if (todayName === 'Friday') {
+    $('#FridayLink').hide();
+}
+if (todayName === 'Saturday') {
+    $('#SaturdayLink').hide();
 }
 
 var schedule = {
@@ -215,7 +244,7 @@ var schedule = {
                 , "endTime": "0954"
                 , "startTimeDisplay": "9 AM"
                 , "endTimeDisplay": ""
-                , "description": "Staff Meeting / Rehearsal"
+                , "description": "Staff Meeting<br/>(Rehearsal)"
                 , "assignments": ["-Choir Room", ""]
             }, {
                 "startTime": "0955"
@@ -250,7 +279,7 @@ var schedule = {
                 , "endTime": "1654"
                 , "startTimeDisplay": "2 PM"
                 , "endTimeDisplay": ""
-                , "description": "Camp Registration"
+                , "description": "Registration"
                 , "assignments": ["2:30 PM-Swim tests", "4:30 PM-Dorms/change", ""]
             }, {
                 "startTime": "1655"
@@ -282,15 +311,8 @@ var schedule = {
                 , "assignments": ["-Abbey Church"]
             }, {
                 "startTime": "1955"
-                , "endTime": "2024"
-                , "startTimeDisplay": "8 PM"
-                , "endTimeDisplay": ""
-                , "description": "Talent Show"
-                , "assignments": ["-Centenary Theater"]
-            }, {
-                "startTime": "2025"
                 , "endTime": "2154"
-                , "startTimeDisplay": "8:30"
+                , "startTimeDisplay": "8 PM"
                 , "endTimeDisplay": ""
                 , "description": "Swim"
                 , "assignments": ["AC-Dorms 9:00", "BD-Dorms 9:30"]
@@ -659,6 +681,12 @@ var lastScrollToId = "";
     	return input !== null && typeof input !== 'undefined' && input.replace(/\s/g, '').length > 0;
 	}
 
+    function GoToDay(dayName) {
+        var url = [location.protocol, '//', location.host, location.pathname, '?day=', dayName || ''].join('');
+        location.href=url;
+    }
+
+
 (function () {
 
 	function getFormattedTime(fourDigitTime) {
@@ -779,13 +807,14 @@ var lastScrollToId = "";
     	//}
     }
     startTime();
-    $('.footerNote,.versionNote').show();
+    $('.footerNote,.versionNote').show(); // ,.dayPicker
 
 	var originalY = 20; // $('.follow-scroll').offset().top;
 
     $(window).on('scroll', function(event) {
     	showNow();
     });
+
 })();
 </script>
 </body>
