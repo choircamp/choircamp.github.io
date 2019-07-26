@@ -133,7 +133,7 @@
 <div id="time" class="timeContainer"></div>
 <div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 2019-07-21 01:11 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 2019-07-26 01:11 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -453,26 +453,59 @@ var schedule = {
     }],
     "Friday": [{
                 "startTime": "0805"
-                , "endTime": "0844"
+                , "endTime": "0824"
                 , "startTimeDisplay": "After"
                 , "endTimeDisplay": "Dorm"
                 , "description": "Chapel"
-                , "assignments": ["-Church Steps"]
+                , "assignments": ["-Church Steps (as usual)"]
+            }, {
+                "startTime": "0825"
+                , "endTime": "0844"
+                , "startTimeDisplay": "After"
+                , "endTimeDisplay": "Chapel"
+                , "description": "Bells Prep"
+                , "assignments": ["FH-Move cases/tables"
+                    , "Teachers-unpack/prep"]
             }, {
                 "startTime": "0845"
-                , "endTime": "1154"
+                , "endTime": "1114"
                 , "startTimeDisplay": "Until"
-                , "endTimeDisplay": "Lunch"
+                , "endTimeDisplay": "11:20"
                 , "description": "Abbey Church"
-                , "assignments": ["ABCD-Alter Steps Rehearse"
-                    , "EFGH-Gallery Rehearse"
-                    , "AB-Bells Rehearse"
-                    , "GH-Bells Rehearse"
-                    , "CDEF-Bells after Lunch"
-                    , "All-Alter Steps Rehearse"
-                    , "All-Choir Stalls Rehearse"
-                    , "ABCD-Break"
-                    , "EFGH-Stalls Rehearse"
+                , "assignments": ["-Out by 11:20!"
+                    , "All-Stalls"
+                    , "-In the Spirit"
+                    , "-O For the Wings"
+                    , "-The Heavens are Telling"
+                    , "-(Gloria of Mag & Nunc)"
+                    , "ABCD-Centenary Break"
+                    , "EFGH-Remain stalls"
+                    , "-Give us the Wings of Faith"
+                    , "-My Cat Jeoffrey"
+                    , "EFGH-go to Loft"
+                    , "-O Sing Joyfully"
+                    , "-EF:Bell Pieces"
+                    , "EFGH-Centenary Break"
+                    , "ABCD-go to Steps"
+                    , "-Father Teach Me How to Pray"
+                    , "-All Things Bright & Beautiful"
+                    , "EFGH-go to Steps"
+                    , "-De Animals"
+                    , "GH-to Upstairs"
+                    , "-AB:Bell Pieces"
+                    , "-GH:Bell Pieces"
+                    ]
+            }, {
+                "startTime": "1115"
+                , "endTime": "1154"
+                , "startTimeDisplay": "11:20"
+                , "endTimeDisplay": "Lunch"
+                , "description": "Centenary"
+                , "assignments": ["ABCD-Stage or Break (Foyer)"
+                    , "EFGH-Choir Room"
+                    , "-Mag & Nunc"
+                    , "-Fri/Sat Psalms"
+                    , "-St. Clement Descant"
                     ]
             }, {
                 "startTime": "1155"
@@ -480,20 +513,20 @@ var schedule = {
                 , "startTimeDisplay": "12:00"
                 , "endTimeDisplay": ""
                 , "description": "Lunch"
-                , "assignments": ["CDEF-Go first!"]
+                , "assignments": []
     		}, {
                 "startTime": "1230"
                 , "endTime": "1254"
                 , "startTimeDisplay": "12:30"
                 , "endTimeDisplay": "Quick"
                 , "description": "Church"
-                , "assignments": ["CD-Bells Rehearse"
-                	, "EF-Bells Rehearse"
+                , "assignments": ["CD-Bell Pieces"
+                    , "-And Any Unfinished Bells"
                 	]
     		}, {
                 "startTime": "1255"
                 , "endTime": "1754"
-                , "startTimeDisplay": "1 PM"
+                , "startTimeDisplay": "12:30"
                 , "endTimeDisplay": "Until"
                 , "description": "Centenary"
                 , "assignments": ["All-Show"
@@ -515,7 +548,9 @@ var schedule = {
                 , "startTimeDisplay": "6:40"
                 , "endTimeDisplay": ""
                 , "description": "Class"
-                , "assignments": []
+                , "assignments": ["ABCD-Stage"
+                    , "EFGH-Choir Room"
+                    , "-Problems/Unfinished"]
             }, {
                 "startTime": "1925"
                 , "endTime": "2009"
