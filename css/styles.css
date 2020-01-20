@@ -190,3 +190,7 @@ P {
 .partyCard div {
 	margin-bottom: 3px;
 }
+
+#registrationSteps li {
+	margin-top: 10px;
+}
