@@ -1,0 +1,12 @@
+var campYear = "2020";
+var campZeroDay = "July 18";
+var campFirstDay = "July 19";
+var campLastDay = "July 25";
+var directorFirstName = "Charlie";
+var directorLastName = "Rigsby";
+var directorAddress1 = "1011 Country Club Road";
+var directorCity = "Arkadelphia";
+var directorState = "AR";
+var directorZip = "71923";
+var directorPhone = "(479) 409-5679";
+var directorEmail = "cr273@aol.com";

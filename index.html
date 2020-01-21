@@ -11,10 +11,8 @@ var pageTracker = _gat._getTracker("UA-9951448-1");
 pageTracker._trackPageview();
 } catch(err) {}
 </script>
+<script type="text/javascript" src="assets/js/scripts.js"></script>
 <script type="text/javascript">
-var campYear = "2020"
-var campFirstDay = "July 18"
-var campLastDay = "July 25"
 $(function(){
   //$('#closedForAll').show();
   //$('#happening').show();
@@ -22,7 +20,7 @@ $(function(){
 });
 </script>
 <title>Arkansas Interfaith Conference Choir Camp</title>
-<link rel="stylesheet" href="css/styles.css" type="text/css">
+<link rel="stylesheet" href="assets/css/styles.css" type="text/css">
 </head>
 <body>
 <div class="PageContainer">
@@ -31,7 +29,7 @@ $(function(){
 <div id="Banner_Dates"><script type="text/javascript">document.write(campFirstDay);</script> - <script type="text/javascript">document.write(campLastDay);</script></div>
 </div>
 <div class="MastheadBannerContainer">
-<img src="images/stepsAll.jpg" id="Masthead_GroupImage" />
+<img src="assets/img/stepsAll.jpg" id="Masthead_GroupImage" />
 <a href="donate/" target="_blank"><img id="DonateButton" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0"></a></div>
 <div class="PageContainer" id="Masthead_Links">
 	 <a class="SmallerMastheadLink" href="register/">register</a>
@@ -57,7 +55,7 @@ $(function(){
   <div class="BarContainer"><span class="Bar">TIME FOR CAMP!</span></div>
   <div class="PageContainer" style="display: block;">
     <p>Choir Camp <script type="text/javascript">document.write(campYear);</script> is happening at beautiful Subiaco!</p>
-    <p>We have mailed a letter to help you prepare. Read it here: <a target="_blank" href="forms/ChoirCamp2019FinalLetter.pdf">Final Letter</a></p>
+    <p>We have mailed a letter to help you prepare. Read it here: <a target="_blank" href="assets/pdf/forms/ChoirCamp2019FinalLetter.pdf">Final Letter</a></p>
     <p>Campers really, really enjoy receiving letters during the week!
       <blockquote>
       Camper's Name
@@ -66,7 +64,7 @@ $(function(){
       <br />Subiaco, AR 72865
       </blockquote>
     Come join us on Saturday, <script type="text/javascript">document.write(campLastDay);</script> for Festival Day (click below for details)!</p>
-    <div style="text-align: center;"><a target="_blank" href="images/FestivalDay2019.pdf"><img src="images/FestivalDay2019.png"/></a></div>
+    <div style="text-align: center;"><a target="_blank" href="assets/pdf/FestivalDay2019.pdf"><img src="assets/img/FestivalDay2019.png"/></a></div>
   </div>
 </div>
 <div class="BarContainer"><span class="Bar">WHAT</span></div>
@@ -76,7 +74,7 @@ $(function(){
 <div class="BarContainer"><span id="DrivingDirectionsLink"><a target="_blank" href="https://subiacoacademy.us/about-us/map-directions">Get Driving Directions</a></span><span class="Bar">WHERE</span></div>
 <div class="PageContainer">
 <table id="WhereImage">
-<tr><td><img src="images/SubiacoBuildingfromRidge.jpg" /></td></tr>
+<tr><td><img src="assets/img/SubiacoBuildingfromRidge.jpg" /></td></tr>
 <tr><td>Subiaco <a target="_blank" href="https://countrymonks.org">Abbey</a> & <a target="_blank" href="https://subiacoacademy.us">Academy</a></td></tr>
 </table>
 <p>Choir Camp is hosted each year by <b>Subiaco Abbey and Academy, in Subiaco, Arkansas</b>. Excellent amenities including air-conditioned dorms and rehearsal halls, Olympic-sized pool, beautiful countryside and grounds, and an exceptionally beautiful church and pipe organ all help facilitate the lessons, worship, and recreational activities (include swimming, games, arts &amp; crafts, movies and dances) during camp.</p>
@@ -99,7 +97,7 @@ $(function(){
     <td colspan="3" class="FestivalDay FestivalDayTime">&nbsp;</td>
   </tr>
   <tr>
-    <td rowspan="7"><img src="images/broadway.jpg" id="WhenImage" />
+    <td rowspan="7"><img src="assets/img/broadway.jpg" id="WhenImage" />
     <td colspan="2"><p>Come join us, as well, for a Festival Day on the last day of camp (Saturday). Bring a friend and enjoy a musical day in the beautiful mountains of Arkansas!</p></td>
     </tr>
   <tr>
@@ -118,7 +116,7 @@ $(function(){
 </div>
 <div class="BarContainer"><span class="Bar"><A name="Registration"></A>FEES &amp; REGISTRATION</span></div>
 <div class="PageContainer">
-<p>For information about registering and costs, visit our <a href="register">Registration Forms and Online Payment</a> page.</p>
+<p>For information about registering and costs, visit our <a href="register">Camper Registration</a> page.</p>
 <p>Enrollment is limited to 120 campers, so please reserve a place early!!</p>
 </div>
 <div class="BarContainer"><span class="Bar"><A name="ContactInformation"></A>CONTACT INFORMATION</span></div>
@@ -127,17 +125,17 @@ $(function(){
     <tr>
       <td class="ContactInformationSectionHeader">Postal Mail</td>
       <td><b>AIC Choir Camp <script type="text/javascript">document.write(campYear);</script></b><br />
-℅ Charlie Rigsby<br />
-1011 Country Club Road<br />
-Arkadelphia, AR 71923</td>
+&incare; <script>document.write(directorFirstName);</script> <script>document.write(directorLastName);</script><br />
+<script>document.write(directorAddress1);</script><br />
+<script>document.write(directorCity);</script>, <script>document.write(directorState);</script> <script>document.write(directorZip);</script></td>
     </tr>
     <tr>
       <td class="ContactInformationSectionHeader">Telephone</td>
-      <td>Charlie Rigsby: (479) 409-5679</td>
+      <td><script>document.write(directorFirstName);</script> <script>document.write(directorLastName);</script>: <script>document.write(directorPhone);</script></td>
     </tr>
     <tr>
       <td class="ContactInformationSectionHeader">E-mail</td>
-      <td>cr273@aol.com</td>
+      <td><script>document.write(directorEmail);</script></td>
     </tr>
   </table>
 </div>
