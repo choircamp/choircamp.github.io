@@ -1,7 +1,7 @@
-var campYear = "2020";
-var campZeroDay = "July 18";
-var campFirstDay = "July 19";
-var campLastDay = "July 25";
+var campYear = "2021";
+var campZeroDay = "July 2021";
+var campFirstDay = "July 2021";
+var campLastDay = "July 2021";
 var directorFirstName = "Charlie";
 var directorLastName = "Rigsby";
 var directorAddress1 = "1011 Country Club Road";
