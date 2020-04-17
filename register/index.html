@@ -66,8 +66,9 @@ pageTracker._trackPageview();
 		$('#paymentForm').submit(function(){
 			firstNames();
 		});
+		$('#postponed').show();
 		//$('#checkBackSoon').show();
-		$('#openForAll').show();
+		//$('#openForAll').show();
 		//$('#closedForGirls').show();
 		//$('#closedForAll').show();
 	});
@@ -87,6 +88,11 @@ pageTracker._trackPageview();
 <div id="closedForAll" style="display: none;">
 	<div class="BarContainer"><span class="Bar">REGISTRATION</span></div>
 	<div class="PageContainer"><p>AIC Choir Camp <script type="text/javascript">document.write(campYear);</script> is full. Registration has closed.</p></div>
+</div>
+
+<div id="postponed" style="display: none;">
+	<div class="BarContainer"><span class="Bar">RETURNING IN 2021</span></div>
+	<div class="PageContainer"><p>AIC Choir Camp is postponed until July 2021.</p><p><a target="_blank" href="../assets/pdf/Postponed2020.pdf">Letter from Charlie</a></p></div>
 </div>
 
 <div id="closedForGirls" style="display: none;">

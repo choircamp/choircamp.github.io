@@ -14,6 +14,7 @@ pageTracker._trackPageview();
 <script type="text/javascript" src="assets/js/scripts.js"></script>
 <script type="text/javascript">
 $(function(){
+  $('#postponed').show();
   //$('#closedForAll').show();
   //$('#happening').show();
   //$('#reunion').show();
@@ -25,8 +26,8 @@ $(function(){
 <body>
 <div class="PageContainer">
 <div id="Banner_AIC">Arkansas Interfaith Conference</div>
-<div id="Banner_ChoirCamp">Choir Camp <script type="text/javascript">document.write(campYear);</script></div>
-<div id="Banner_Dates"><script type="text/javascript">document.write(campFirstDay);</script> - <script type="text/javascript">document.write(campLastDay);</script></div>
+<div id="Banner_ChoirCamp">Choir Camp <!-- show for 2021: <script type="text/javascript">document.write(campYear);</script> --></div>
+<!-- show for 2021: <div id="Banner_Dates"><script type="text/javascript">document.write(campFirstDay);</script> - <script type="text/javascript">document.write(campLastDay);</script></div> -->
 </div>
 <div class="MastheadBannerContainer">
 <img src="assets/img/stepsAll.jpg" id="Masthead_GroupImage" />
@@ -42,7 +43,13 @@ $(function(){
 <div id="closedForAll" style="display: none;">
   <div class="BarContainer"><span class="Bar">REGISTRATION</span></div>
   <div class="PageContainer" style="display: block;">
-  	<p>AIC Choir Camp <script type="text/javascript">document.write(campYear);</script> is full. Registration has closed.</p>
+    <p>AIC Choir Camp <script type="text/javascript">document.write(campYear);</script> is full. Registration has closed.</p>
+  </div>
+</div>
+<div id="postponed" style="display: none;">
+  <div class="BarContainer"><span class="Bar">RETURNING IN 2021</div>
+  <div class="PageContainer" style="display: block;">
+    <p><a target="_blank" href="assets/pdf/Postponed2020.pdf">Letter from Charlie</a></p>
   </div>
 </div>
 <div id="reunion" style="display: none;">
