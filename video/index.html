@@ -13,8 +13,15 @@ try {
 
 $(document).ready(function() {
   $('#passwordRequestForm').on('submit', function(e) {
+  	  $('#subjectInputField').val('Choir Camp Video Password Request (' + $('#requestingNameInputField').val() + ')');
+  	  $('#messageInputField').val('Camper Name: ' + $('#camperNameInputField').val());
+  	  $('#afterInputField').val([location.protocol, '//', location.host, location.pathname, '?password=requested'].join(''));
 	  $('#requestPasswordButton').val('Please wait...');
 	  $('#requestPasswordButton').attr('disabled', 'disabled');
+	  setTimeout(function(){
+	  	$('#passwordRequestFormContainer').hide();
+	  	$('#passwordRequestError').show();
+	  },30000);
   });
   if (window.location.href.indexOf('password=requested') > 0) {
     $('#passwordRequestThankYou').show();
@@ -70,12 +77,13 @@ Welcome to the Choir Camp Video page! Thanks to <strong>Dr. Linda Jones</strong>
   <div id="passwordRequestFormContainer" style="display:none;">
     To get the password, submit the information below and we'll respond soon. Alternatively, feel free to call Charlie or Lance.
     <form id="passwordRequestForm" action="https://mailthis.to/choircampcontact" method="POST" encType="multipart/form-data">
-	    <input type="hidden" name="_subject" value="Choir Camp Video Password Request">
-	    <input type="hidden" name="_after" value="https://choircamp.org/video?password=requested">
+	    <input id="subjectInputField" type="hidden" name="_subject" value="Choir Camp Video Password Request">
+	    <input id="afterInputField" type="hidden" name="_after" value="https://choircamp.org/video?password=requested">
+	    <input id="messageInputField" type="hidden" name="message">
       <table>
         <tr>
           <td style="text-align: right;"><label for="requestingName">Your Name:</label></td>
-          <td><input type="text" id="requestingName" placeholder=" first and last"/></td>
+          <td><input id="requestingNameInputField" type="text" id="requestingName" placeholder=" first and last"/></td>
         </tr>
         <tr>
           <td style="text-align: right;"><label for="requestingEmailAddress">Your Email:</label></td>
@@ -83,7 +91,7 @@ Welcome to the Choir Camp Video page! Thanks to <strong>Dr. Linda Jones</strong>
         </tr>
         <tr>
           <td style="text-align: right;"><label for="camperName">Camper's Name:</label></td>
-          <td><input type="text" id="camperName" placeholder=" first and last" /></td>
+          <td><input id="camperNameInputField" type="text" id="camperName" placeholder=" first and last" /></td>
         </tr>
         <tr>
           <td></td>
