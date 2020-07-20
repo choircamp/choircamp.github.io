@@ -14,7 +14,6 @@ try {
 $(document).ready(function() {
   $('#passwordRequestForm').on('submit', function(e) {
   	  $('#subjectInputField').val('Choir Camp Video Password Request (' + $('#requestingNameInputField').val() + ')');
-  	  $('#messageInputField').val('Camper Name: ' + $('#camperNameInputField').val());
   	  $('#afterInputField').val([location.protocol, '//', location.host, location.pathname, '?password=requested'].join(''));
 	  $('#requestPasswordButton').val('Please wait...');
 	  $('#requestPasswordButton').attr('disabled', 'disabled');
@@ -79,8 +78,6 @@ Welcome to the Choir Camp Video page! Thanks to <strong>Dr. Linda Jones</strong>
     <form id="passwordRequestForm" action="https://formsubmit.co/8b8a961d9c4b8e0a4ae3aeae3f7367f8" method="POST">
 	    <input id="subjectInputField" type="hidden" name="_subject" value="Choir Camp Video Password Request">
 	    <input id="afterInputField" type="hidden" name="_next" value="https://choircamp.org/video?password=requested">
-	    <input id="messageInputField" type="hidden" name="message">
-	    <input type="hidden" name="form_name" value="Camp Videos Password Request">
       <table>
         <tr>
           <td style="text-align: right;"><label for="requestingName">Your Name:</label></td>
@@ -91,8 +88,8 @@ Welcome to the Choir Camp Video page! Thanks to <strong>Dr. Linda Jones</strong>
           <td><input type="email" id="requestingEmailAddress" name="email" placeholder=" we'll respond to you" /></td>
         </tr>
         <tr>
-          <td style="text-align: right;"><label for="camperName">Camper's Name:</label></td>
-          <td><input id="camperNameInputField" type="text" id="camperName" placeholder=" first and last" /></td>
+          <td style="text-align: right;"><label for="camperName">Name a camper you've sent to camp before:</label></td>
+          <td><input id="camperNameInputField" type="text" id="camperName" name="camper" placeholder=" first and last" /></td>
         </tr>
         <tr>
           <td></td>
