@@ -160,7 +160,13 @@ TD {
 }
 
 .SmallerMastheadLink {
-	font-size: 11pt;
+	font-size: 14pt;
+	letter-spacing: .04rem;
+	text-decoration: none;
+}
+
+.SmallerMastheadLink:hover {
+	text-decoration: underline;
 }
 
 #DonateButton {
