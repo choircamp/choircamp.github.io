@@ -76,18 +76,18 @@ Welcome to the Choir Camp Video page! Thanks to <strong>Dr. Linda Jones</strong>
 <div class="PageContainer">
   <div id="passwordRequestFormContainer" style="display:none;">
     To get the password, submit the information below and we'll respond soon. Alternatively, feel free to call Charlie or Lance.
-    <form id="passwordRequestForm" action="https://mailthis.to/choircampcontact" method="POST" encType="multipart/form-data">
+    <form id="passwordRequestForm" action="https://formsubmit.co/8b8a961d9c4b8e0a4ae3aeae3f7367f8" method="POST">
 	    <input id="subjectInputField" type="hidden" name="_subject" value="Choir Camp Video Password Request">
-	    <input id="afterInputField" type="hidden" name="_after" value="https://choircamp.org/video?password=requested">
+	    <input id="afterInputField" type="hidden" name="_next" value="https://choircamp.org/video?password=requested">
 	    <input id="messageInputField" type="hidden" name="message">
       <table>
         <tr>
           <td style="text-align: right;"><label for="requestingName">Your Name:</label></td>
-          <td><input id="requestingNameInputField" type="text" id="requestingName" placeholder=" first and last"/></td>
+          <td><input id="requestingNameInputField" type="text" id="requestingName" name="name" placeholder=" first and last"/></td>
         </tr>
         <tr>
           <td style="text-align: right;"><label for="requestingEmailAddress">Your Email:</label></td>
-          <td><input type="text" id="requestingEmailAddress" name="_replyto" placeholder=" we'll respond to you" /></td>
+          <td><input type="email" id="requestingEmailAddress" name="_replyto" placeholder=" we'll respond to you" /></td>
         </tr>
         <tr>
           <td style="text-align: right;"><label for="camperName">Camper's Name:</label></td>
