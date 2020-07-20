@@ -17,20 +17,16 @@ $(document).ready(function() {
     var requestingName = $('#requestingName').val();
     var requestingEmailAddress = $('#requestingEmailAddress').val();
     var camperName = $('#camperName').val();
-	$('#requestPasswordButton').val('Please wait...');
-	$('#requestPasswordButton').attr('disabled', 'disabled');
     $.post('https://mailthis.to/choircampcontact', {
       _subject: 'Choir Camp Video Password Request',
       _replyto: requestingEmailAddress,
       _after: [location.protocol, '//', location.host, location.pathname, '?password=requested'].join(''),
       "From Email": requestingEmailAddress,
       "From Name": requestingName,
-    }).done(function () {
-      $('#passwordRequestFormContainer').hide();
-	  $('#passwordRequestThankYou').show();
-    }).fail(function(){
-      $('#passwordRequestFormContainer').hide();
-	  $('#passwordRequestError').show();
+    }).then(function () {
+      $('#requestPasswordButton').val('Please wait...');
+      $('#requestPasswordButton').attr('disabled', 'disabled');
+      location.href = 'https://mailthis.to/confirm'
     });
   });
   if (window.location.href.indexOf('password=requested') > 0) {
