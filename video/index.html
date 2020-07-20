@@ -13,21 +13,8 @@ try {
 
 $(document).ready(function() {
   $('#passwordRequestForm').on('submit', function(e) {
-    e.preventDefault();
-    var requestingName = $('#requestingName').val();
-    var requestingEmailAddress = $('#requestingEmailAddress').val();
-    var camperName = $('#camperName').val();
-    $.post('https://mailthis.to/choircampcontact', {
-      _subject: 'Choir Camp Video Password Request',
-      _replyto: requestingEmailAddress,
-      _after: [location.protocol, '//', location.host, location.pathname, '?password=requested'].join(''),
-      "From Email": requestingEmailAddress,
-      "From Name": requestingName,
-    }).then(function () {
-      $('#requestPasswordButton').val('Please wait...');
-      $('#requestPasswordButton').attr('disabled', 'disabled');
-      location.href = 'https://mailthis.to/confirm'
-    });
+	  $('#requestPasswordButton').val('Please wait...');
+	  $('#requestPasswordButton').attr('disabled', 'disabled');
   });
   if (window.location.href.indexOf('password=requested') > 0) {
     $('#passwordRequestThankYou').show();
@@ -82,7 +69,9 @@ Welcome to the Choir Camp Video page! Thanks to <strong>Dr. Linda Jones</strong>
 <div class="PageContainer">
   <div id="passwordRequestFormContainer" style="display:none;">
     To get the password, submit the information below and we'll respond soon. Alternatively, feel free to call Charlie or Lance.
-    <form id="passwordRequestForm">
+    <form id="passwordRequestForm" action="https://mailthis.to/choircampcontact" method="POST" encType="multipart/form-data">
+	    <input type="hidden" name="_subject" value="Choir Camp Video Password Request">
+	    <input type="hidden" name="_after" value="https://choircamp.org/video?password=requested">
       <table>
         <tr>
           <td style="text-align: right;"><label for="requestingName">Your Name:</label></td>
@@ -90,7 +79,7 @@ Welcome to the Choir Camp Video page! Thanks to <strong>Dr. Linda Jones</strong>
         </tr>
         <tr>
           <td style="text-align: right;"><label for="requestingEmailAddress">Your Email:</label></td>
-          <td><input type="text" id="requestingEmailAddress" placeholder=" we'll respond to you" /></td>
+          <td><input type="text" id="requestingEmailAddress" name="_replyto" placeholder=" we'll respond to you" /></td>
         </tr>
         <tr>
           <td style="text-align: right;"><label for="camperName">Camper's Name:</label></td>
@@ -101,7 +90,7 @@ Welcome to the Choir Camp Video page! Thanks to <strong>Dr. Linda Jones</strong>
           <td><input type="submit" id="requestPasswordButton" value="Request Password"/></td>
         </tr>
       </table>
-    </form>
+	</form>
   </div>
   <div id="passwordRequestThankYou" style="display:none;">
     <p style="font-weight: bold;">
