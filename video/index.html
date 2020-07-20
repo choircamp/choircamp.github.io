@@ -47,13 +47,41 @@ $(document).ready(function() {
 </div>
 <div class="BarContainer"><span class="Bar">WELCOME</span></div>
 <div class="PageContainer">
-Welcome to the Choir Camp Video page! Read the instructions below to access our video collection.
+Welcome to the Choir Camp Video page! Thanks to <strong>Dr. Linda Jones</strong> for making our videos available - view on any device!
 </div>
-<div class="BarContainer"><span class="Bar">GET THE PASSWORD</span></div>
+<div class="BarContainer"><span class="Bar">VIEW THE VIDEOS</span></div>
 <div class="PageContainer">
-  <div style="margin-bottom: 10px;">We host our camp videos on a private, ad-free platform. When you click the link below, you'll be taken to a private video album and prompted for a password.</div>
+    <p>We host our camp videos on a private, ad-free, and password-protected platform. See the PASSWORD section below to get the password. Then choose a year to view its video album:</p>
+    <div id="videoButtons">
+      <table>
+        <tr>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7222097','_blank');">2005</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7232659','_blank');">2006</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7242445','_blank');">2007</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7252449','_blank');">2008</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7269145','_blank');">2009</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7278586','_blank');">2010</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7292818','_blank');">2011</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7310289','_blank');">2012</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7310326','_blank');">2013</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7342640','_blank');">2014</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7315538','_blank');">2015</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7361885','_blank');">2016</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/7318879','_blank');">2017</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/5649050','_blank');">2018</button></td>
+          <td><button onclick="window.open('https://vimeo.com/showcase/6743192','_blank');">2019</button></td>
+        </tr>
+      </table>
+    </div>
+</div>
+<div class="BarContainer"><span class="Bar">PASSWORD</span></div>
+<div class="PageContainer">
   <div id="passwordRequestFormContainer" style="display:none;">
-    If you don't already have the password, submit the information below and we'll respond soon.
+    To get the password, submit the information below and we'll respond soon. Alternatively, feel free to call Charlie or Lance.
     <form id="passwordRequestForm">
       <table>
         <tr>
@@ -81,19 +109,10 @@ Welcome to the Choir Camp Video page! Read the instructions below to access our 
     </p>
   </div>
 </div>
-<div class="BarContainer"><span class="Bar">VIEW THE VIDEOS</span></div>
-<div class="PageContainer">
-  <div style="margin-left: 20px; width: 550px;">
-	  <div style="text-align: center; padding-top: 20px; font-size: 24pt;"><a href="https://vimeo.com/album/5649050" target="_blank">Choir Camp 2018 Videos</a></div>
-  </div>
-  <div style="padding-top: 20px;">
-  <p>Thanks to Dr. Linda Jones for making our videos available - view on any device!</p>
-  </div>
-</div>
 <div class="BarContainer"><span class="Bar">PREVIEW</span></div>
 <div class="PageContainer">
-	<p>Below is a preview of what the album looks like on a desktop browser (after you provide the password). You can choose from any of several videos. All videos offer high quality image and sound!</p>
-	<a target="_blank" href="https://vimeo.com/album/5649050"><img style="margin-left: 10px;" src="../assets/img/vimeoPreview.png"/></a>
+	<p>Below is a preview of what the album looks like on a desktop browser (after you provide the password). Every year offers several videos to watch - all with high-quality image and sound!</p>
+	<img style="margin-left: 10px;" src="../assets/img/vimeoPreview.png"/>
 </div>
 <script type="text/javascript">
 var sc_project=4950148;

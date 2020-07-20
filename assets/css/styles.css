@@ -194,3 +194,14 @@ P {
 #registrationSteps li {
 	margin-top: 10px;
 }
+
+#videoButtons table {
+	margin: auto;
+}
+
+#videoButtons button {
+	border-radius: 50px;
+	outline: none;
+	margin: 6px;
+	font-size: 24pt;
+}
