@@ -1,7 +1,7 @@
 var campYear = "2022";
-var campZeroDay = "July "+campYear;
-var campFirstDay = "July "+campYear;
-var campLastDay = "July "+campYear;
+var campZeroDay = "July 23, "+campYear;
+var campFirstDay = "July 24, "+campYear;
+var campLastDay = "July 30, "+campYear;
 var directorFirstName = "Charlie";
 var directorLastName = "Rigsby";
 var directorAddress1 = "1011 Country Club Road";
