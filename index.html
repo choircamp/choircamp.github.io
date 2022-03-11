@@ -14,6 +14,7 @@ pageTracker._trackPageview();
 <script type="text/javascript" src="assets/js/scripts.js"></script>
 <script type="text/javascript">
 $(function(){
+  $('#letter').show();
   //$('#postponed').show();
   //$('#closedForAll').show();
   //$('#happening').show();
@@ -26,12 +27,12 @@ $(function(){
 <body>
 <div class="PageContainer">
 <div id="Banner_AIC">Arkansas Interfaith Conference</div>
-<div id="Banner_ChoirCamp">Choir Camp <!-- show for 2022: <script type="text/javascript">document.write(campYear);</script> --></div>
+<div id="Banner_ChoirCamp">Choir Camp <script type="text/javascript">document.write(campYear);</script></div>
 <div id="Banner_Dates"><script type="text/javascript">document.write(campFirstDay);</script> - <script type="text/javascript">document.write(campLastDay);</script></div>
 </div>
 <div class="MastheadBannerContainer">
 <img src="assets/img/stepsAll.jpg" id="Masthead_GroupImage" />
-<a href="donate/" target="_blank"><img id="DonateButton" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0"></a></div>
+<!-- <a href="donate/" target="_blank"><img id="DonateButton" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0"></a></div> -->
 <div class="PageContainer" id="Masthead_Links">
 	 <a class="SmallerMastheadLink" href="register/">register</a>
 	 <!-- | <a class="SmallerMastheadLink" href="news/">news</a> -->
@@ -45,6 +46,12 @@ $(function(){
   <div class="BarContainer"><span class="Bar">REGISTRATION</span></div>
   <div class="PageContainer" style="display: block;">
     <p>AIC Choir Camp <script type="text/javascript">document.write(campYear);</script> is full. Registration has closed.</p>
+  </div>
+</div>
+<div id="letter" style="display: none;">
+  <div class="BarContainer"><span class="Bar">RETURNING IN 2022!</div>
+  <div class="PageContainer" style="display: block;">
+    <p><a target="_blank" href="assets/pdf/OpenAnnouncement2022.pdf">Letter from Charlie announcing Choir Camp 2022. Please open and read!</a></p>
   </div>
 </div>
 <div id="postponed" style="display: none;">
