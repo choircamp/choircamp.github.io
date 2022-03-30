@@ -1,3 +1,4 @@
+var campFullName = "AIC Choir Camp";
 var campYear = "2022";
 var campZeroDay = "July 23, "+campYear;
 var campFirstDay = "July 24, "+campYear;
@@ -10,3 +11,9 @@ var directorState = "AR";
 var directorZip = "71923";
 var directorPhone = "(479) 409-5679";
 var directorEmail = "cr273@aol.com";
+
+var registrationFormsAddressLine1 = "&incare; St. Luke's Church";
+var registrationFormsAddressLine2 = "228 Spring Street";
+var registrationFormsAddressCity = "Hot Springs";
+var registrationFormsAddressState = "AR";
+var registrationFormsAddressZip = "71901";
