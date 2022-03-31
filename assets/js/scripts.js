@@ -3,6 +3,7 @@ var campYear = "2022";
 var campZeroDay = "July 23, "+campYear;
 var campFirstDay = "July 24, "+campYear;
 var campLastDay = "July 30, "+campYear;
+
 var directorFirstName = "Charlie";
 var directorLastName = "Rigsby";
 var directorAddress1 = "1011 Country Club Road";
@@ -12,8 +13,14 @@ var directorZip = "71923";
 var directorPhone = "(479) 409-5679";
 var directorEmail = "cr273@aol.com";
 
-var registrationFormsAddressLine1 = "&incare; St. Luke's Church";
-var registrationFormsAddressLine2 = "228 Spring Street";
-var registrationFormsAddressCity = "Hot Springs";
-var registrationFormsAddressState = "AR";
-var registrationFormsAddressZip = "71901";
+var campContactAddressLine1 = "&incare; St. Luke's Church";
+var campContactAddressLine2 = "228 Spring Street";
+var campContactAddressCity = "Hot Springs";
+var campContactAddressState = "AR";
+var campContactAddressZip = "71901";
+
+var registrationFormsAddressLine1 = campContactAddressLine1;
+var registrationFormsAddressLine2 = campContactAddressLine2;
+var registrationFormsAddressCity = campContactAddressCity;
+var registrationFormsAddressState = campContactAddressState;
+var registrationFormsAddressZip = campContactAddressZip;
