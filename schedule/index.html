@@ -140,7 +140,7 @@
 <div id="time" class="timeContainer"></div>
 <div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon-Thu</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 202207251340 2022-07-25 13:40 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 202207281930 2022-07-28 19:30 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -482,6 +482,14 @@ var schedule = {
                 , "assignments": []
     }],
     "Friday": [{
+                "startTime": "0725"
+                , "endTime": "0759"
+                , "startTimeDisplay": "7:30"
+                , "endTimeDisplay": ""
+                , "description": "Breakfast"
+                , "assignments": []
+            }
+            , {
                 "startTime": "0805"
                 , "endTime": "0824"
                 , "startTimeDisplay": "After"
@@ -493,8 +501,11 @@ var schedule = {
                 , "endTime": "0844"
                 , "startTimeDisplay": "After"
                 , "endTimeDisplay": "Chapel"
-                , "description": "Bells Prep"
-                , "assignments": ["FH-Move cases/tables"
+                , "description": "Bells to Crossing"
+                , "assignments": [
+                    "ABCDEFGH-Move into Steps"
+                    , "- And I Saw"
+                    , "Counslrs-Move cases/tables"
                     , "Teachers-unpack/prep"]
             }, {
                 "startTime": "0845"
@@ -504,26 +515,24 @@ var schedule = {
                 , "description": "Abbey Church"
                 , "assignments": ["-Out by 11:20!"
                     , "All-Stalls"
-                    , "-In the Spirit"
-                    , "-O For the Wings"
-                    , "-The Heavens are Telling"
-                    , "-(Gloria of Mag & Nunc)"
+                    , "-I Was Glad"
+                    , "-Mag and Nunc"
+                    , "-Souls of the Righteous"
+                    , "-I Shall See"
+                    , "- Ukraine Prayer"
                     , "ABCD-Centenary Break"
                     , "EFGH-Remain stalls"
-                    , "-Give us the Wings of Faith"
-                    , "-My Cat Jeoffrey"
+                    , "-See What Love"
+                    , "EF-Bells"
+                    , "GH-Bells"
                     , "EFGH-go to Loft"
-                    , "-O Sing Joyfully"
-                    , "-EF:Bell Pieces"
+                    , "-Road Home"
                     , "EFGH-Centenary Break"
-                    , "ABCD-go to Steps"
-                    , "-Father Teach Me How to Pray"
-                    , "-All Things Bright & Beautiful"
-                    , "EFGH-go to Steps"
-                    , "-De Animals"
-                    , "GH-to Upstairs"
-                    , "-AB:Bell Pieces"
-                    , "-GH:Bell Pieces"
+                    , "ABCD-Move into Steps"
+                    , "-Song to the Lamb"
+                    , "-Bell Pieces"
+                    , "EFGH-Return to Church (if time)"
+                    , "-Practice something! :)"
                     ]
             }, {
                 "startTime": "1115"
@@ -531,9 +540,8 @@ var schedule = {
                 , "startTimeDisplay": "11:20"
                 , "endTimeDisplay": "Lunch"
                 , "description": "Centenary"
-                , "assignments": ["ABCD-Stage or Break (Foyer)"
-                    , "EFGH-Choir Room"
-                    , "-Mag & Nunc"
+                , "assignments": ["ABCDEFGH-Choir Room"
+                    , "-(ABCD on floor!)"
                     , "-Fri/Sat Psalms"
                     , "-St. Clement Descant"
                     ]
@@ -546,23 +554,13 @@ var schedule = {
                 , "assignments": []
     		}, {
                 "startTime": "1230"
-                , "endTime": "1254"
-                , "startTimeDisplay": "12:30"
-                , "endTimeDisplay": "Quick"
-                , "description": "Church"
-                , "assignments": ["CD-Bell Pieces"
-                    , "-And Any Unfinished Bells"
-                	]
-    		}, {
-                "startTime": "1255"
                 , "endTime": "1754"
                 , "startTimeDisplay": "12:30"
                 , "endTimeDisplay": "Until"
                 , "description": "Centenary"
                 , "assignments": ["All-Show"
                 	, "-As long as it takes! :)"
-                    , "-...then rest..."
-                    , "-&nbsp;(or maybe swim/rehearse?)"
+                    , "-...then Swim (Rain? Dorms.)..."
                     , "-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...until..."
                 	]
     		}, {
@@ -578,9 +576,7 @@ var schedule = {
                 , "startTimeDisplay": "6:40"
                 , "endTimeDisplay": ""
                 , "description": "Class"
-                , "assignments": ["ABCD-Stage"
-                    , "EFGH-Choir Room"
-                    , "-Problems/Unfinished"]
+                , "assignments": ["-What's needed..."]
             }, {
                 "startTime": "1925"
                 , "endTime": "2009"
@@ -590,11 +586,18 @@ var schedule = {
                 , "assignments": []
             }, {
                 "startTime": "2010"
-                , "endTime": "2359"
+                , "endTime": "2129"
                 , "startTimeDisplay": "8:15"
                 , "endTimeDisplay": ""
                 , "description": "Swim"
-                , "assignments": ["-All"]
+                , "assignments": ["-All","-If Rain:Centenary"]
+    }, {
+                "startTime": "2130"
+                , "endTime": "2359"
+                , "startTimeDisplay": "After"
+                , "endTimeDisplay": ""
+                , "description": "Early bedtime!"
+                , "assignments": ["-They're ready!"]
     }],
     "Friday_Show_in_the_morning_AND_Church_in_the_afternoon": [
             {
