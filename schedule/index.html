@@ -140,7 +140,7 @@
 <div id="time" class="timeContainer"></div>
 <div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon-Thu</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 202307202306 2023-07-20 23:06 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 202307211644 2023-07-21 16:44 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -156,14 +156,14 @@ function setToday() {
 }
 
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-var dayOfMonthOnWhichStaffArrives = 18;
+var dayOfMonthOnWhichStaffArrives = 22;
 
 setToday();
 
 var todayName = days[today.getDay()];
 var todayNameBrief = "Sat";
 if (today.getDate() <= dayOfMonthOnWhichStaffArrives && today.getMonth() == 6) {
-	todayName = 'SetupSaturday';
+	todayName = 'Setup';
 }
 if (params.get('day')) {
     todayName = params.get('day');
@@ -189,7 +189,7 @@ if (todayName === 'Saturday') {
 }
 
 var schedule = {
-    "SetupSaturday": [{
+    "Setup": [{
                 "startTime": "0600"
                 , "endTime": "1314"
                 , "startTimeDisplay": "1 PM"
@@ -202,27 +202,27 @@ var schedule = {
                 , "startTimeDisplay": "1 PM"
                 , "endTimeDisplay": ""
                 , "description": "Setup"
-                , "assignments": ["Choir Rm-Jeannie,Jack,Thomas,Alexander", "Choir Rm-Rylan,Carson,Britton,Justin,Greg", "Drama Rm-Sarah,Anna,Emily", "Stage-JB,Mike J", "Pianos-Guys move (check with</br>&nbsp;&nbsp;&nbsp;Charlie/Jack/Jeannie FIRST)", "Handbells-Cindy,Sarah,Cari,Teresa,Debby</br>&nbsp;&nbsp;&nbsp;(boys:help move bells and tables)", "Art Rm-Diana,Rachel", "Office/Lib-Charlie,Lance,Linda J", "Kitchen-Marthe,Clem,Debby,Grace", "Nurses Sta-Sarah</br>&nbsp;&nbsp;&nbsp;(need two assistants)</br>&nbsp;&nbsp;&nbsp;(medical records looked through)</br>&nbsp;&nbsp;&nbsp;(several special diet)</br>&nbsp;&nbsp;&nbsp;(find which forms missing)", "Heard-J.B.,Greg", "Abbey/Fuhr-Louise,Cindy,Molly,Counselors", "Reg.&Setup-Cindy,Sarah,Lance,Marthe", "Move supplies,</br>tables,chairs,risers-Anyone (You?)<br>&nbsp;&nbsp;&nbsp;&nbsp;-- Setup Foyer for Reg.", "What else?-<em>Who</em> else?", ""]
+                , "assignments": ["You-Find a job! :)","Choir Rm-Jack,Thomas", "Drama Rm-Sarah S,Emily", "Pianos-Guys move (check with</br>&nbsp;&nbsp;&nbsp;Charlie/Jack FIRST)", "Handbells-Cari,Mike</br>&nbsp;&nbsp;&nbsp;(boys:move bells/tables)", "Art Rm-Diana,Rachel", "Office/Lib-Charlie,Lance,Linda J", "Kitchen-Diana,Clem,Debby", "Nurses Sta-need two assistants</br>&nbsp;&nbsp;&nbsp;(med records looked through)</br>&nbsp;&nbsp;&nbsp;(find special diets)</br>&nbsp;&nbsp;&nbsp;(find which forms missing)", "Heard-J.B.,Greg,Mike", "Abbey/Fuhr-Louise", "Reg.&Setup-Lance,Linda,Sarah H", "What else?-<em>Who</em> else? Find a job! :)", ""]
             }, {
                 "startTime": "1455"
                 , "endTime": "1519"
                 , "startTimeDisplay": "3 PM"
                 , "endTimeDisplay": ""
                 , "description": "Staff Meeting"
-                , "assignments": ["-Choir Room (Centenary)"]
+                , "assignments": ["-Centenary"]
             }, {
                 "startTime": "1520"
                 , "endTime": "1654"
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "5 PM"
                 , "description": "Setup"
-                , "assignments": ["Name/Rm Tags-Counselors+", "Photo Gallery-Diana,Rachel,Counselors+", "Music Books-Caroline,Jack,Thomas,Jeannie", "T--Shirts-Linda J,Marthe,+", "Handbell Music-Cindy,Sarah,Teresa,Mike J</br>&nbsp;&nbsp;&nbsp;Cari,Debby+"]
+                , "assignments": ["Name/Rm Tags-Counselors", "Music Books-Caroline,Jack,Thomas,Jeannie", "Handbell Music-Cari,Mike J</br>&nbsp;&nbsp;&nbsp;Cari,Debby+","What else?-<em>Who</em> else? Lots to do!"]
             }, {
                 "startTime": "1655"
                 , "endTime": "1754"
                 , "startTimeDisplay": " 5 PM"
                 , "endTimeDisplay": ""
-                , "description": "Swim/Unpack"
+                , "description": "Unpack"
                 , "assignments": [""]
             }, {
                 "startTime": "1755"
@@ -243,7 +243,7 @@ var schedule = {
                 , "endTime": "2200"
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "10 PM"
-                , "description": "Swim"
+                , "description": "Swim/Unpack"
                 , "assignments": [""]
     }],
     "Sunday": [{
@@ -792,7 +792,7 @@ var lastScrollToId = "";
 
 	function showTimeSlots(hour, minute) {
 		var todayDisplayName = todayName;
-		if (todayDisplayName === 'SetupSaturday') {
+		if (todayDisplayName === 'Setup') {
 			todayDisplayName = 'Saturday';
 		} else {
 			if (todayNameBrief === 'M-T') {
