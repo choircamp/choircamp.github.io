@@ -1,8 +1,8 @@
 var campFullName = "AIC Choir Camp";
-var campYear = "2023";
-var campZeroDay = "July 22, "+campYear;
-var campFirstDay = "July 23, "+campYear;
-var campLastDay = "July 29, "+campYear;
+var campYear = "2024";
+var campZeroDay = "July 20, "+campYear;
+var campFirstDay = "July 21, "+campYear;
+var campLastDay = "July 27, "+campYear;
 
 var directorFirstName = "Charlie";
 var directorLastName = "Rigsby";
