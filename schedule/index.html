@@ -140,7 +140,7 @@
 <div id="time" class="timeContainer"></div>
 <div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon-Thu</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 202307251351 2023-07-25 13:51 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 202307272355 2023-07-27 23:55 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -487,63 +487,61 @@ var schedule = {
                 , "startTimeDisplay": "7:30"
                 , "endTimeDisplay": ""
                 , "description": "Breakfast"
-                , "assignments": []
+                , "assignments": ["After-Move cases/tables","-...to Crossing"]
             }
             , {
                 "startTime": "0805"
-                , "endTime": "0824"
+                , "endTime": "0834"
                 , "startTimeDisplay": "After"
                 , "endTimeDisplay": "Dorm"
                 , "description": "Chapel"
                 , "assignments": ["-Church Steps (as usual)"]
             }, {
-                "startTime": "0825"
-                , "endTime": "0844"
-                , "startTimeDisplay": "After"
-                , "endTimeDisplay": "Chapel"
-                , "description": "Bells to Crossing"
-                , "assignments": [
-                    "ABCDEFGH-Move into Steps"
-                    , "- And I Saw"
-                    , "Counslrs-Move cases/tables"
-                    , "Teachers-unpack/prep"]
-            }, {
-                "startTime": "0845"
-                , "endTime": "1114"
+                "startTime": "0835"
+                , "endTime": "1129"
                 , "startTimeDisplay": "Until"
-                , "endTimeDisplay": "11:20"
+                , "endTimeDisplay": "11:30"
                 , "description": "Abbey Church"
-                , "assignments": ["-Out by 11:20!"
+                , "assignments": ["All-Out by 11:30"
+                    , "◼-◼"
+                    , "ABCD-Waiting near Bells"
+                    , "EFGH-Gallery"
+                    , "-◾May Peace (SATB)"
+                    , "-(Then: TB To Stalls)"
+                    , "-◾Lift Thine Eyes (SA)"
+                    , "◼-◼"
+                    , "ABCD-Crossing"
+                    , "-◾Bells Pieces"
+                    , "EFGH-Waiting in Stalls"
+                    , "◼-◼"
+                    , "ABCD-Break"
+                    , "EFGH-Stalls"
+                    , "-◾Verleih"
+                    , "-◾In Paradisum"
+                    , "-(Then: TB to Break)"
+                    , "-◾Pie Jesu (SA)"
+                    , "◼-◼"
+                    , "All-Crossing"
+                    , "-◾Set the Sun (EFGH bells)"
+                    , "-◾There Will Be Stars"
+                    , "-◾Siyahamba"
+                    , "◼-◼"
                     , "All-Stalls"
-                    , "-I Was Glad"
-                    , "-Mag and Nunc"
-                    , "-Souls of the Righteous"
-                    , "-I Shall See"
-                    , "- Ukraine Prayer"
-                    , "ABCD-Centenary Break"
-                    , "EFGH-Remain stalls"
-                    , "-See What Love"
-                    , "EF-Bells"
-                    , "GH-Bells"
-                    , "EFGH-go to Loft"
-                    , "-Road Home"
-                    , "EFGH-Centenary Break"
-                    , "ABCD-Move into Steps"
-                    , "-Song to the Lamb"
-                    , "-Bell Pieces"
-                    , "EFGH-Return to Church (if time)"
-                    , "-Practice something! :)"
+                    , "-◾Sing My Soul"
+                    , "-◾I Will Worship"
+                    , "◼-◼"
+                    , "ABCD-Break"
+                    , "EFGH-Crossing"
+                    , "-◾Bells Pieces"
                     ]
             }, {
-                "startTime": "1115"
+                "startTime": "1130"
                 , "endTime": "1154"
-                , "startTimeDisplay": "11:20"
+                , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "Lunch"
                 , "description": "Centenary"
-                , "assignments": ["ABCDEFGH-Choir Room"
-                    , "-(ABCD on floor!)"
+                , "assignments": ["All-Choir Room"
                     , "-Fri/Sat Psalms"
-                    , "-St. Clement Descant"
                     ]
             }, {
                 "startTime": "1155"
@@ -560,7 +558,7 @@ var schedule = {
                 , "description": "Centenary"
                 , "assignments": ["All-Show"
                 	, "-As long as it takes! :)"
-                    , "-...then Swim (Rain? Dorms.)..."
+                    , "-...then Swim..."
                     , "-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...until..."
                 	]
     		}, {
@@ -576,7 +574,7 @@ var schedule = {
                 , "startTimeDisplay": "6:40"
                 , "endTimeDisplay": ""
                 , "description": "Class"
-                , "assignments": ["-What's needed..."]
+                , "assignments": ["-Practice what's needed..."]
             }, {
                 "startTime": "1925"
                 , "endTime": "2009"
@@ -590,14 +588,14 @@ var schedule = {
                 , "startTimeDisplay": "8:15"
                 , "endTimeDisplay": ""
                 , "description": "Swim"
-                , "assignments": ["-All","-If Rain:Centenary"]
+                , "assignments": []
     }, {
                 "startTime": "2130"
                 , "endTime": "2359"
                 , "startTimeDisplay": "After"
                 , "endTimeDisplay": ""
-                , "description": "Early bedtime!"
-                , "assignments": ["-They're ready!"]
+                , "description": "Early bedtime?!"
+                , "assignments": []
     }],
     "Friday_Show_in_the_morning_AND_Church_in_the_afternoon": [
             {
