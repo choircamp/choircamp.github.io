@@ -28,9 +28,9 @@ TD {
 	margin: auto;
 }
 
-#Banner_AIC {
+#Banner_NamePrefix {
 	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
-	font-size: x-large;
+	font-size: large;
 	font-weight: bold;
 	text-align: center;
 	padding: 2px;
@@ -164,6 +164,28 @@ TD {
 	font-size: 14pt;
 	letter-spacing: .04rem;
 	text-decoration: none;
+}
+
+#SocialMedia_Links {
+	font-family: Roboto,sans-serif;
+	text-align: center;
+	padding-top: 10px;
+	background-color: #00628B;
+}
+
+.SocialMediaLink {
+	font-size: 12pt;
+	color: white;
+	letter-spacing: .04rem;
+	text-decoration: none;
+}
+
+.SocialMediaLink img {
+	height: 16px;
+	width: 16px;
+	margin-left: 40px;
+	margin-bottom: -3px;
+	filter: invert();
 }
 
 .SmallerMastheadLink:hover {

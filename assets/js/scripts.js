@@ -1,4 +1,8 @@
-var campFullName = "AIC Choir Camp";
+var campNamePrefix = "Arkansas Interfaith";
+var campShortName = "Choir Camp";
+var campLongName = `${campNamePrefix} ${campShortName}`;
+var campNamePrefixAbbreviated = "AI";
+var campFullName = `${campNamePrefixAbbreviated} ${campShortName}`;
 var campYear = "2024";
 var campZeroDay = "July 20, "+campYear;
 var campFirstDay = "July 21, "+campYear;

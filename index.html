@@ -19,40 +19,47 @@ $(function(){
   //$('#closedForAll').show();
   //$('#happening').show();
   //$('#reunion').show();
+  $('#nameChangeAnnouncement').show();
 });
 </script>
-<title>Arkansas Interfaith Conference Choir Camp</title>
+<title>Arkansas Interfaith Choir Camp</title>
 <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
 </head>
 <body>
 <div class="PageContainer">
-<div id="Banner_AIC">Arkansas Interfaith Conference</div>
-<div id="Banner_ChoirCamp">Choir Camp <script type="text/javascript">document.write(campYear);</script></div>
+<div id="Banner_NamePrefix"><script type="text/javascript">document.write(campNamePrefix);</script></div>
+<div id="Banner_ChoirCamp"><script type="text/javascript">document.write(campShortName);</script> <script type="text/javascript">document.write(campYear);</script></div>
 <div id="Banner_Dates"><script type="text/javascript">document.write(campFirstDay);</script> - <script type="text/javascript">document.write(campLastDay);</script></div>
 </div>
 <div class="MastheadBannerContainer">
 <img src="assets/img/stepsAll.jpg" id="Masthead_GroupImage" />
 <!-- <a href="donate/" target="_blank"><img id="DonateButton" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0"></a></div> -->
 <div class="PageContainer" id="Masthead_Links">
-	 <a class="SmallerMastheadLink" href="register/">register</a>
-	 <!-- | <a class="SmallerMastheadLink" href="news/">news</a> -->
-   <!--  | <a href="newsletter/" class="SmallerMastheadLink">friends of aic choir camp</a> -->
+   <a class="SmallerMastheadLink" href="register/">register</a>
+  <!-- | <a class="SmallerMastheadLink" href="news/">news</a> -->
+  <!-- | <a href="newsletter/" class="SmallerMastheadLink">friends of ai <script type="text/javascript">document.write(campShortName.toLowerCase());</script></a> -->
      | <a href="video/" class="SmallerMastheadLink">video</a>
      | <a href="newsletter/" class="SmallerMastheadLink">newsletter</a>
-     | <a href="links/" class="SmallerMastheadLink">links we like</a>
+     <!-- | <a href="links/" class="SmallerMastheadLink">links we like</a> -->
      <!-- | <a href="party/" class="SmallerMastheadLink">party</a> -->
      | <a href="donate/" class="SmallerMastheadLink">donate</a>
+</div>
+<div id="nameChangeAnnouncement" style="display: none;">
+  <div class="BarContainer"><span class="Bar">NEW NAME</span></div>
+  <div class="PageContainer" style="display: block;">
+    <p><script type="text/javascript">document.write(campShortName);</script> is now <script type="text/javascript">document.write(campLongName);</script>! Read Charlie's letter!</p>
+  </div>
 </div>
 <div id="closedForAll" style="display: none;">
   <div class="BarContainer"><span class="Bar">REGISTRATION</span></div>
   <div class="PageContainer" style="display: block;">
-    <p>AIC Choir Camp <script type="text/javascript">document.write(campYear);</script> is full. Registration has closed.</p>
+    <p><script type="text/javascript">document.write(campFullName);</script> <script type="text/javascript">document.write(campYear);</script> is full. Registration has closed.</p>
   </div>
 </div>
 <div id="letter" style="display: none;">
   <div class="BarContainer"><span class="Bar">RETURNING IN 2022!</div>
   <div class="PageContainer" style="display: block;">
-    <p><a target="_blank" href="assets/pdf/OpenAnnouncement2022.pdf">Letter from Charlie announcing Choir Camp 2022. Please open and read!</a></p>
+    <p><a target="_blank" href="assets/pdf/OpenAnnouncement2022.pdf">Letter from Charlie announcing <script type="text/javascript">document.write(campShortName);</script> 2022. Please open and read!</a></p>
   </div>
 </div>
 <div id="postponed" style="display: none;">
@@ -64,18 +71,18 @@ $(function(){
 <div id="reunion" style="display: none;">
   <div class="BarContainer"><span class="Bar">REUNION!</span></div>
   <div class="PageContainer" style="display: block;">
-    We're getting together again on August 5th, 2018! It's a <a href="/reunion">Choir Camp Reunion</a>!
+    We're getting together again on August 5th, 2018! It's a <a href="/reunion"><script type="text/javascript">document.write(campShortName);</script> Reunion</a>!
   </div>
 </div>
 <div id="happening" style="display: none;">
   <div class="BarContainer"><span class="Bar">TIME FOR CAMP!</span></div>
   <div class="PageContainer" style="display: block;">
-    <p>Choir Camp <script type="text/javascript">document.write(campYear);</script> is happening at beautiful Subiaco!</p>
+    <p><script type="text/javascript">document.write(campShortName);</script> <script type="text/javascript">document.write(campYear);</script> is happening at beautiful Subiaco!</p>
     <p>Parents - read our <a target="_blank" href="assets/pdf/forms/ChoirCamp2022FinalLetter.pdf">Final Letter</a> to best prepare!</p>
     <p>Campers really, really enjoy receiving letters during the week!
       <blockquote>
       Camper's Name
-      <br />AIC Choir Camp
+      <br /><script type="text/javascript">document.write(campYear);</script>
       <br />Subiaco Abbey
       <br />Subiaco, AR 72865
       </blockquote>
@@ -85,7 +92,7 @@ $(function(){
 </div>
 <div class="BarContainer"><span class="Bar">WHAT</span></div>
 <div class="PageContainer">
-	<p>Established in 1976 by Trinity Episcopal Cathedral, and sponsored by the Arkansas Interfaith Conference of Churches and Synagogues, Choir Camp offers an intensive music program with classes in <b>choral singing</b>, <b>handbells</b>, <b>liturgy</b>, <b>Broadway song &amp; dance</b>, <b>history</b>, <b>poetry</b> and <b>art</b>. This camp aims to provide a healthy balance between work and play.</p>
+	<p>Established in 1976 by Trinity Episcopal Cathedral, and sponsored by St. Luke's Episcopal Church, <script type="text/javascript">document.write(campShortName);</script> offers an intensive music program with classes in <b>choral singing</b>, <b>handbells</b>, <b>liturgy</b>, <b>Broadway song &amp; dance</b>, <b>history</b>, <b>poetry</b> and <b>art</b>. This camp aims to provide a healthy balance between work and play.</p>
 </div>
 <div class="BarContainer"><span id="DrivingDirectionsLink"><a target="_blank" href="https://google.com/search?q=driving+directions+to+405+N+Subiaco+Ave%2C+72865">Get Driving Directions</a></span><span class="Bar">WHERE</span></div>
 <div class="PageContainer">
@@ -93,7 +100,7 @@ $(function(){
 <tr><td><img src="assets/img/SubiacoBuildingfromRidge.jpg" /></td></tr>
 <tr><td>Subiaco <a target="_blank" href="https://countrymonks.org">Abbey</a> & <a target="_blank" href="https://subiacoacademy.us">Academy</a></td></tr>
 </table>
-<p>Choir Camp is hosted each year by <b>Subiaco Abbey and Academy, in Subiaco, Arkansas</b>. Excellent amenities including air-conditioned dorms and rehearsal halls, Olympic-sized pool, beautiful countryside and grounds, and an exceptionally beautiful church and pipe organ all help facilitate the lessons, worship, and recreational activities (include swimming, games, arts &amp; crafts, movies and dances) during camp.</p>
+<p><script type="text/javascript">document.write(campShortName);</script> is hosted each year by <b>Subiaco Abbey and Academy, in Subiaco, Arkansas</b>. Excellent amenities including air-conditioned dorms and rehearsal halls, Olympic-sized pool, beautiful countryside and grounds, and an exceptionally beautiful church and pipe organ all help facilitate the lessons, worship, and recreational activities (include swimming, games, arts &amp; crafts, movies and dances) during camp.</p>
 </div>
 <div class="BarContainer"><span class="Bar">WHO</span></div>
 <div class="PageContainer">
@@ -168,5 +175,9 @@ var sc_click_stat=1;
 var sc_security="ed745b91";
 </script>
 <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<div class="PageContainer" id="SocialMedia_Links">
+   <a class="SocialMediaLink" href="https://example.com"><img src="assets/img/instagram.png" /></a> <a class="SocialMediaLink" href="https://example.com"> AI-Choir-Camp</a>
+   <a class="SocialMediaLink" href="https://example.com"><img src="assets/img/facebook.png" /></a> <a class="SocialMediaLink" href="https://example.com"> ai_choir_camp</a>
+</div>
 </body>
 </html>
