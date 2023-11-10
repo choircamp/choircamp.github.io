@@ -178,13 +178,18 @@ TD {
 	color: white;
 	letter-spacing: .04rem;
 	text-decoration: none;
+	display: inline-block;
 }
+
+.SocialMediaLink:not(:first-child) {
+	margin-left: 40px;
+}
+
 
 .SocialMediaLink img {
 	height: 16px;
 	width: 16px;
-	margin-left: 40px;
-	margin-bottom: -3px;
+	margin-bottom: -2px;
 	filter: invert();
 }
 
