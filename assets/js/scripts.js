@@ -4,6 +4,7 @@ var campLongName = `${campNamePrefix} ${campShortName}`;
 var campNamePrefixAbbreviated = "AI";
 var campFullName = `${campNamePrefixAbbreviated} ${campShortName}`;
 var campYear = "2024";
+var campFullNameWithYear = `${campNamePrefixAbbreviated} ${campShortName} ${campYear}`;
 var campZeroDay = "July 20, "+campYear;
 var campFirstDay = "July 21, "+campYear;
 var campLastDay = "July 27, "+campYear;
