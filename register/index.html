@@ -20,6 +20,13 @@ pageTracker._trackPageview();
 		$('#openForAll').show();
 		//$('#closedForGirls').show();
 		//$('#closedForAll').show();
+		$('select[name="os0"]').change(function onPaymentSelectChanged(){ // to accommodate two "saved links and buttons" in one HTML form - https://www.paypal.com/buttons/saved
+			var $select = $(this);
+			var formName = $select.find(":selected").attr('data-form-name');
+			var hostedButtonId = $select.find(":selected").attr('data-hosted-button-id');
+			$('input[type="hidden"][name="hosted_button_id"]').val(hostedButtonId);
+			$('input[type="hidden"][name="on0"]').val(hostedButtonId);
+		});
 	});
 </script>
 </head>
@@ -93,7 +100,7 @@ pageTracker._trackPageview();
 				</tr>
 				</table>
 				</p>
-				<p>Deposit-only options are available below. Pay the balance when you drop off your camper(s).</p>
+				<p>Below, you may pay the full registration or a deposit. If you have paid a deposit, return here to pay the balance later, or pay it when you drop off your child at camp.</p>
 				<p>Provide information below, and then press the button. The payment processor will open in a new browser tab. Remember to return here when you're done.</p>
 				<div style="margin: 10px;">
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display: inline;">
@@ -102,15 +109,20 @@ pageTracker._trackPageview();
 					<table>
 					<tr><td><input type="hidden" name="on0" value="Campers">Camper Count</td></tr><tr><td style="padding-bottom: 10px;"><select name="os0">
 						<option disabled>Full payment today:</option>
-						<option value="1 Camper at $370 = $370.00">1 Camper at $370 = $370.00</option>
-						<option value="First Camper at $370 + 1 Sibling at $340 = $710.00">First Camper at $370 + 1 Sibling at $340 = $710.00</option>
-						<option value="First Camper at $370 + 2 Siblings at $340 = $1,050.00">First Camper at $370 + 2 Siblings at $340 = $1,050.00</option>
-						<option value="First Camper at $370 + 3 Siblings at $340 = $1,390.00">First Camper at $370 + 3 Siblings at $340 = $1,390.00</option>
-						<option disabled>Deposit today -- pay balance when you drop off your camper(s):</option>
-						<option value="Deposit: 1 Camper at $75 = $75.00">Deposit: 1 Camper at $75 = $75.00</option>
-						<option value="Deposit: First Camper at $75 + 1 Sibling at $75 = $150.00">Deposit: First Camper at $75 + 1 Sibling at $75 = $150.00</option>
-						<option value="Deposit: First Camper at $75 + 2 Siblings at $75 = $225.00">Deposit: First Camper at $75 + 2 Siblings at $75 = $225.00</option>
-						<option value="Deposit: First Camper at $75 + 3 Siblings at $75 = $300.00">Deposit: First Camper at $75 + 3 Siblings at $75 = $300.00</option>
+						<option data-hosted-button-id="ZFPRKGDRE4X5Y" data-form-name="Campers" value="Full: 1 Camper at $370 = $370.00">Full: 1 Camper at $370 = $370.00</option>
+						<option data-hosted-button-id="ZFPRKGDRE4X5Y" data-form-name="Campers" value="Full: First Camper at $370 + 1 Sibling at $340 = $710.00">Full: First Camper at $370 + 1 Sibling at $340 = $710.00</option>
+						<option data-hosted-button-id="ZFPRKGDRE4X5Y" data-form-name="Campers" value="Full: First Camper at $370 + 2 Siblings at $340 = $1,050.00">Full: First Camper at $370 + 2 Siblings at $340 = $1,050.00</option>
+						<option data-hosted-button-id="ZFPRKGDRE4X5Y" data-form-name="Campers" value="Full: First Camper at $370 + 3 Siblings at $340 = $1,390.00">Full: First Camper at $370 + 3 Siblings at $340 = $1,390.00</option>
+						<option disabled>Deposit today (you'll pay balance later - here or at camp):</option>
+						<option data-hosted-button-id="ZFPRKGDRE4X5Y" data-form-name="Campers" value="Deposit: 1 Camper at $75 = $75.00">Deposit: 1 Camper at $75 = $75.00</option>
+						<option data-hosted-button-id="ZFPRKGDRE4X5Y" data-form-name="Campers" value="Deposit: First Camper at $75 + 1 Sibling at $75 = $150.00">Deposit: First Camper at $75 + 1 Sibling at $75 = $150.00</option>
+						<option data-hosted-button-id="ZFPRKGDRE4X5Y" data-form-name="Campers" value="Deposit: First Camper at $75 + 2 Siblings at $75 = $225.00">Deposit: First Camper at $75 + 2 Siblings at $75 = $225.00</option>
+						<option data-hosted-button-id="ZFPRKGDRE4X5Y" data-form-name="Campers" value="Deposit: First Camper at $75 + 3 Siblings at $75 = $300.00">Deposit: First Camper at $75 + 3 Siblings at $75 = $300.00</option>
+						<option disabled>Balance today (you paid deposit before):</option>
+          	<option data-hosted-button-id="6VA5WD9JVCVJU" data-form-name="Campers (Balance)" value="Balance: 1 Camper - $75.00 of $370.00 Paid = $295.00">Balance: 1 Camper - $75.00 of $370.00 Paid = $295.00</option>
+          	<option data-hosted-button-id="6VA5WD9JVCVJU" data-form-name="Campers (Balance)" value="Balance: 2 Campers - $150.00 of $710.00 Paid = $560.00">Balance: 2 Campers - $150.00 of $710.00 Paid = $560.00</option>
+          	<option data-hosted-button-id="6VA5WD9JVCVJU" data-form-name="Campers (Balance)" value="Balance: 3 Campers - $225.00 of $1,050.00 Paid = $825.00">Balance: 3 Campers - $225.00 of $1,050.00 Paid = $825.00</option>
+          	<option data-hosted-button-id="6VA5WD9JVCVJU" data-form-name="Campers (Balance)" value="Balance: 4 Campers - $300.00 of $1,390.00 Paid = $1,090.00">Balance: 4 Campers - $300.00 of $1,390.00 Paid = $1,090.00</option>
 					</select> </td></tr>
 					<tr><td><input type="hidden" name="on1" value="Camper Last Name">Camper Last Name<br/><span style="font-size: small;">(so your payment is applied to the right registration)</span></td></tr><tr><td style="padding-bottom: 10px;"><input type="text" name="os1" maxlength="60"></td></tr>
 					<tr><td><input type="hidden" name="on2" value="Camper First Name(s)">Camper First Name(s)<br/><span style="font-size: small;">(list several, if need be, separated by commas)</span></td></tr><tr><td><input type="text" style="width: 300px;" name="os2" maxlength="60"></td></tr>
