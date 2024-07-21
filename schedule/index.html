@@ -33,6 +33,7 @@
 	}
 
 	.inProgressTimeSlot td {
+        color: white;
 		font-weight: bold;
 	}
 
@@ -55,7 +56,7 @@
     .dayPicker a {
     	display: inline-block;
     	white-space: nowrap;
-        background-color: #F9D607;
+        background-color: #CD5961;
         color: black;
         padding: 1.5em;
         margin: 0.3em;
@@ -100,12 +101,14 @@
         text-align: right;
         font-size: 28pt;
         padding-right: 10px;
-        background-color: #0157A7; /* coordinated with inProgressTimeSlot and follow-scroll background-color */
+        color: white;
+        background-color: #8E000A; /* coordinated with inProgressTimeSlot and follow-scroll background-color */
         white-space: nowrap;
     }
 
     .inProgressTimeSlot {
-        background-color: #1AA763; /* coordinated with follow-scroll and timeSlotTimesContainer background-color */
+        color: white;
+        background-color: #B2000D; /* coordinated with follow-scroll and timeSlotTimesContainer background-color */
     }
 
     .timeSlotBoundary {
@@ -117,7 +120,7 @@
 
     .follow-scroll {
         color: #000000; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color */
-        background-color: #F9D607; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color, and should be same as 'dayPicker a' */
+        background-color: #CD5961; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color, and should be same as 'dayPicker a' */
         padding: 3px;
         border: 1px solid black;
         display: none;
@@ -134,13 +137,30 @@
 </style>
 </head>
 <body>
+
+<!--
+
+When camp is allowed in church (https://mail.google.com/mail/u/0/#inbox/QgrcJHsTnPbdGnxJhfJWQwlvPkJcJrVMZjb):
+
+Sat Jul 20: 2PM-5PM, 7:30-10PM
+Sun Jul 21: 2PM-5PM, 7:30-10PM
+Mon Jul 22: 7:30AM-11:15AM, 12PM-5PM, 7:30-10PM
+Tue Jul 23: 7:30AM-11:15AM, 12PM-5PM, 7:30-10PM
+Wed Jul 24: 7:30AM-11:15AM, 12PM-5PM, 7:30-10PM
+Thu Jul 25: 7:30AM-11:15AM, 12PM-5PM, 7:30-10PM
+Fri Jul 26: 7:30AM-11:15AM, 12PM-5PM, 7:30-10PM
+Sat Jul 27: 8:15AM-11:15AM
+
+-->
+
+
 <div id="all">
 	<div id="allAssignments" style="margin-top: 0px;"></div>
 </div>
 <div id="time" class="timeContainer"></div>
 <div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon-Thu</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 202405031103 2024-05-03 11:03 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 202407202313 2024-07-20 23:13 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -202,7 +222,7 @@ var schedule = {
                 , "startTimeDisplay": "1 PM"
                 , "endTimeDisplay": ""
                 , "description": "Setup"
-                , "assignments": ["You-Find a job! :)","Choir Rm-Jack,Thomas", "Drama Rm-Sarah S,Emily", "Pianos-Guys move (check with</br>&nbsp;&nbsp;&nbsp;Charlie/Jack FIRST)", "Handbells-Cari,Mike</br>&nbsp;&nbsp;&nbsp;(boys:move bells/tables)", "Art Rm-Diana,Rachel", "Office/Lib-Charlie,Lance,Linda J", "Kitchen-Diana,Clem,Debby", "Nurses Sta-need two assistants</br>&nbsp;&nbsp;&nbsp;(med records looked through)</br>&nbsp;&nbsp;&nbsp;(find special diets)</br>&nbsp;&nbsp;&nbsp;(find which forms missing)", "Heard-J.B.,Greg,Mike", "Abbey/Fuhr-Louise", "Reg.&Setup-Lance,Linda,Sarah H", "What else?-<em>Who</em> else? Find a job! :)", ""]
+                , "assignments": ["You-Find a job! :)","Gallery and Foyer-Supplies, Tables, Chairs", "Abbey Dorm Recon-Molly, Rachel, Erin", "Choir Rooms-Jeannie, Jack", "Drama Room-Evelyn, Emily, Sarah H, Sarah S", "Stage-move piano(s) in", "Handbells-Cari, Cindy, Mike, Jana", "Kitchen-Diana,Clem,Debby", "Art Rm-Diana, Rachel", "Kitchen-Clem, Marthe, Debby", "Medical Records-Sarah K, Kylee", "Room Assignments-Charlie, Louise, J.B.", "What else?-<em>Who</em> else? Find a job! :)", ""]
             }, {
                 "startTime": "1455"
                 , "endTime": "1519"
@@ -216,7 +236,7 @@ var schedule = {
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "5 PM"
                 , "description": "Setup"
-                , "assignments": ["Name/Rm Tags-Counselors", "Music Books-Caroline,Jack,Thomas,Jeannie", "Handbell Music-Cari,Mike J","What else?-<em>Who</em> else? Lots to do!"]
+                , "assignments": ["Prepare Registration-Cindy and Sarah H, Kylee", "T-Shirts-Juan, Caroline C","Handbell Music-Cari, Mike, Cindy","Fieldhouse Recon-Erin, Thomas","Coury Classroom Recon-Fr. Chuck","Dorm Door Tags-Counselors","Foyer Table/Chairs-Counselors"]
             }, {
                 "startTime": "1655"
                 , "endTime": "1754"
@@ -265,7 +285,7 @@ var schedule = {
                 , "endTime": "1039"
                 , "startTimeDisplay": "10 AM"
                 , "endTimeDisplay": ""
-                , "description": "Finish Jobs"
+                , "description": "Finish Assignments"
                 , "assignments": ["-Learn Choir Music", ""]
             }, {
                 "startTime": "1040"
@@ -301,7 +321,7 @@ var schedule = {
                 , "startTimeDisplay": "5 PM"
                 , "endTimeDisplay": ""
                 , "description": "Orientation"
-                , "assignments": ["-Centenary Theater", "-Counselors: On stage", "-Staff: Seats up front", "-Who are you?", "-What do you do?"]
+                , "assignments": ["-Centenary Theater"]
             }, {
                 "startTime": "1755"
                 , "endTime": "1839"
@@ -315,14 +335,14 @@ var schedule = {
                 , "startTimeDisplay": "6:45"
                 , "endTimeDisplay": "7:25"
                 , "description": "Class"
-                , "assignments": ["ABCD-Show/Stage", "EFGH-Choir Room"]
+                , "assignments": ["AB-Liturgy Class (Coury)", "CD-Show","EG-Choir","FH-Foyer"]
             }, {
                 "startTime": "1925"
                 , "endTime": "1954"
                 , "startTimeDisplay": "7:30"
                 , "endTimeDisplay": "7:55"
                 , "description": "Evensong"
-                , "assignments": ["-Abbey Church"]
+                , "assignments": ["-Centenary Foyer"]
             }, {
                 "startTime": "1955"
                 , "endTime": "2154"
@@ -342,8 +362,8 @@ var schedule = {
                 , "endTime": "2259"
                 , "startTimeDisplay": "10:30"
                 , "endTimeDisplay": ""
-                , "description": "Dorms"
-                , "assignments": ["11:00-Lights Out"]
+                , "description": "EFGH Dorms"
+                , "assignments": ["11:00-EFGH Lights Out","11:00-Staff Dorms"]
     }],
     "Monday": [{
                 "startTime": "0725"
@@ -367,7 +387,7 @@ var schedule = {
                 , "startTimeDisplay": "8:50"
                 , "endTimeDisplay": "9:30"
                 , "description": "Class (1st)"
-                , "assignments": ["ABCD-Choir Room", "EF-Gallery", "GH-Show/Stage", ""]
+                , "assignments": ["AC-Choir", "BD-Foyer", "EF-Gallery", "GH-Show"]
             }
             , {
                 "startTime": "0930"
@@ -375,7 +395,7 @@ var schedule = {
                 , "startTimeDisplay": " 9:35"
                 , "endTimeDisplay": "10:15"
                 , "description": "Class (2nd)"
-                , "assignments": ["ABCD-Classroom", "EFGH-Choir Room", ""]
+                , "assignments": ["AB-Show", "CD-Classroom", "EG-Choir", "FH-Foyer"]
             }
             , {
                 "startTime": "1010"
@@ -391,7 +411,7 @@ var schedule = {
                 , "startTimeDisplay": "10:30"
                 , "endTimeDisplay": "11:10"
                 , "description": "Class (3rd)"
-                , "assignments": ["ABCD-Show/Stage", "EF-Extra Stuff", "GH-Gallery", "Staff-Choir Room"]
+                , "assignments": ["AB-Classroom", "CD-Show", "EF-Liturgy", "GH-Gallery", "Staff-Choir Room"]
             }
             , {
                 "startTime": "1110"
@@ -399,7 +419,7 @@ var schedule = {
                 , "startTimeDisplay": "11:15"
                 , "endTimeDisplay": "11:55"
                 , "description": "Class (4th)"
-                , "assignments": ["ABCD-Choir Room", "EF-Show/Stage", "GH-Extra Stuff", "-&nbsp;&nbsp;(Hold EFGH<br/>&nbsp;&nbsp;until Noon)"]
+                , "assignments": ["AC-Choir", "BD-Foyer", "EF-Gallery", "GH-Show"]
             }
             , {
                 "startTime": "1155"
@@ -415,7 +435,7 @@ var schedule = {
                 , "startTimeDisplay": "12:45"
                 , "endTimeDisplay": " 1:25"
                 , "description": "Class (5th)"
-                , "assignments": ["ABCD-Classroom", "EFGH-Choir Room"]
+                , "assignments": ["AB-Show", "CD-Classroom","EG-Choir","FH-Foyer"]
             }
             , {
                 "startTime": "1325"
@@ -423,7 +443,7 @@ var schedule = {
                 , "startTimeDisplay": "1:30"
                 , "endTimeDisplay": "2:10"
                 , "description": "Class (6th)"
-                , "assignments": ["ABCD-Choir Room", "EF-Gallery", "GH-Show/Stage", ""]
+                , "assignments": ["AC-Choir", "BD-Foyer", "EF-Gallery", "GH-Show"]
             }
             , {
                 "startTime": "1410"
@@ -431,7 +451,7 @@ var schedule = {
                 , "startTimeDisplay": "2:15"
                 , "endTimeDisplay": "2:55"
                 , "description": "Class (7th)"
-                , "assignments": ["ABCD-Extra Stuff", "EF-Show/Stage", "GH-Gallery", "Staff-Choir Room"]
+                , "assignments": ["AB-Classroom", "CD-Liturgy", "EF-Show", "GH-Gallery", "Staff-Choir"]
             }
             , {
                 "startTime": "1450"
@@ -439,7 +459,7 @@ var schedule = {
                 , "startTimeDisplay": "3:00"
                 , "endTimeDisplay": ""
                 , "description": "Break"
-                , "assignments": ["Staff-Choir Room"]
+                , "assignments": ["Staff-Choir (Alt)"]
             }
             , {
                 "startTime": "1555"
@@ -447,7 +467,7 @@ var schedule = {
                 , "startTimeDisplay": "4:00"
                 , "endTimeDisplay": "5:45"
                 , "description": "Activities"
-                , "assignments": []
+                , "assignments": ["Staff-Choir (Alt)"]
             }
             , {
                 "startTime": "1755"
@@ -463,7 +483,7 @@ var schedule = {
                 , "startTimeDisplay": "6:45"
                 , "endTimeDisplay": "7:25"
                 , "description": "Class (8th)"
-                , "assignments": ["ABCD-Show/Stage", "EFGH-Choir Room"]
+                , "assignments": ["AB-Liturgy", "CD-Show", "EG-Choir", "FH-Foyer"]
             }
             , {
                 "startTime": "1925"
@@ -471,15 +491,39 @@ var schedule = {
                 , "startTimeDisplay": "7:30"
                 , "endTimeDisplay": ""
                 , "description": "Evensong"
-                , "assignments": []
+                , "assignments": ["Thu-Then Move Handbells"]
             }
             , {
                 "startTime": "1955"
-                , "endTime": "2229"
+                , "endTime": "2154"
                 , "startTimeDisplay": "8:00"
                 , "endTimeDisplay": ""
                 , "description": "Activities"
                 , "assignments": []
+            }
+            , {
+                "startTime": "2155"
+                , "endTime": "2229"
+                , "startTimeDisplay": "10:00"
+                , "endTimeDisplay": ""
+                , "description": "EFGH Teen Time"
+                , "assignments": ["ABCD-Dorms"]
+            }
+            , {
+                "startTime": "2230"
+                , "endTime": "2259"
+                , "startTimeDisplay": "10:30"
+                , "endTimeDisplay": ""
+                , "description": "EFGH Dorms"
+                , "assignments": ["ABCD-Lights Out"]
+            }
+            , {
+                "startTime": "2300"
+                , "endTime": "2329"
+                , "startTimeDisplay": "11:00"
+                , "endTimeDisplay": ""
+                , "description": "EFGH-Lights Out"
+                , "assignments": ["Staff-Dorms"]
     }],
     "Friday": [{
                 "startTime": "0725"
@@ -487,7 +531,7 @@ var schedule = {
                 , "startTimeDisplay": "7:30"
                 , "endTimeDisplay": ""
                 , "description": "Breakfast"
-                , "assignments": ["After-Move cases/tables","-...to Crossing"]
+                , "assignments": [""]
             }
             , {
                 "startTime": "0805"
@@ -502,38 +546,39 @@ var schedule = {
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "11:30"
                 , "description": "Abbey Church"
-                , "assignments": ["All-Out by 11:30"
-                    , "----"
-                    , "ABCD-Waiting near Bells"
-                    , "EFGH-Gallery"
-                    , "-May Peace (SATB)"
-                    , "-(Then: TB To Stalls)"
-                    , "-Lift Thine Eyes (SA)"
-                    , "----"
-                    , "ABCD-Crossing"
-                    , "-Bells Pieces"
-                    , "EFGH-Waiting in Stalls"
-                    , "----"
-                    , "ABCD-Break"
-                    , "EFGH-Stalls"
-                    , "-Verleih"
-                    , "-In Paradisum"
-                    , "-(Then: TB to Break)"
-                    , "-Pie Jesu (SA)"
-                    , "----"
-                    , "All-Crossing"
-                    , "-Set the Sun (EFGH bells)"
-                    , "-There Will Be Stars"
-                    , "-Siyahamba"
-                    , "----"
-                    , "All-Stalls"
-                    , "-Sing My Soul"
-                    , "-I Will Worship"
-                    , "----"
-                    , "ABCD-Break"
-                    , "EFGH-Crossing"
-                    , "-Bells Pieces"
-                    ]
+                , "assignments": ["All-Out by 11:15"]
+                // , "assignments": ["All-Out by 11:30"
+                //     , "----"
+                //     , "ABCD-Waiting near Bells"
+                //     , "EFGH-Gallery"
+                //     , "-May Peace (SATB)"
+                //     , "-(Then: TB To Stalls)"
+                //     , "-Lift Thine Eyes (SA)"
+                //     , "----"
+                //     , "ABCD-Crossing"
+                //     , "-Bells Pieces"
+                //     , "EFGH-Waiting in Stalls"
+                //     , "----"
+                //     , "ABCD-Break"
+                //     , "EFGH-Stalls"
+                //     , "-Verleih"
+                //     , "-In Paradisum"
+                //     , "-(Then: TB to Break)"
+                //     , "-Pie Jesu (SA)"
+                //     , "----"
+                //     , "All-Crossing"
+                //     , "-Set the Sun (EFGH bells)"
+                //     , "-There Will Be Stars"
+                //     , "-Siyahamba"
+                //     , "----"
+                //     , "All-Stalls"
+                //     , "-Sing My Soul"
+                //     , "-I Will Worship"
+                //     , "----"
+                //     , "ABCD-Break"
+                //     , "EFGH-Crossing"
+                //     , "-Bells Pieces"
+                //     ]
             }, {
                 "startTime": "1130"
                 , "endTime": "1154"
@@ -541,8 +586,8 @@ var schedule = {
                 , "endTimeDisplay": "Lunch"
                 , "description": "Centenary"
                 , "assignments": ["All-Choir Room"
-                    , "-Fri/Sat Psalms"
-                    ]
+                    , "-&nbsp;&nbsp;&nbsp;Fri/Sat Psalms"
+                    , "Counselors-Stage"]
             }, {
                 "startTime": "1155"
                 , "endTime": "1229"
@@ -718,14 +763,14 @@ var schedule = {
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "Done"
                 , "description": "Teardown"
-                , "assignments": ["-Pianos Away", "-Stage Restored", "-Risers Away", "-Gallery Restored", "-Bells Stowed", "-Foyer Restored", "-Dorms Cleaned", "-Fleet Packed", "-Kitchen Cleaned", "-etc, etc (ask!)"]
+                , "assignments": ["-Pianos Away", "-Stage Restored", "-Gallery Restored", "-Bells Stowed", "-Foyer Restored", "-Dorms Cleaned", "-Fleet Packed", "-Kitchen Cleaned", "-etc, etc (ask!)"]
             }, {
                 "startTime": "1555"
                 , "endTime": "1754"
                 , "startTimeDisplay": ""
                 , "endTimeDisplay": ""
-                , "description": "Taproom"
-                , "assignments": ["-Refreshments!", "-Dubious pride!", "-Start planning..."]
+                , "description": "Pool"
+                , "assignments": ["-Relax!", "-Dubious pride!", "-Start planning..."]
             }, {
                 "startTime": "1755"
                 , "endTime": "2000"
