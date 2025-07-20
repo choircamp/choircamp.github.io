@@ -33,7 +33,7 @@
 	}
 
 	.inProgressTimeSlot td {
-        color: white;
+        color: black;
 		font-weight: bold;
 	}
 
@@ -56,7 +56,7 @@
     .dayPicker a {
     	display: inline-block;
     	white-space: nowrap;
-        background-color: #CD5961;
+        background-color: #FFFF8F;
         color: black;
         padding: 1.5em;
         margin: 0.3em;
@@ -101,14 +101,14 @@
         text-align: right;
         font-size: 28pt;
         padding-right: 10px;
-        color: white;
-        background-color: #8E000A; /* coordinated with inProgressTimeSlot and follow-scroll background-color */
+        color: black;
+        background-color: #FFFC33; /* coordinated with inProgressTimeSlot and follow-scroll background-color */
         white-space: nowrap;
     }
 
     .inProgressTimeSlot {
-        color: white;
-        background-color: #B2000D; /* coordinated with follow-scroll and timeSlotTimesContainer background-color */
+        color: black;
+        background-color: #FFFF8F; /* coordinated with follow-scroll and timeSlotTimesContainer background-color */
     }
 
     .timeSlotBoundary {
@@ -120,7 +120,7 @@
 
     .follow-scroll {
         color: #000000; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color */
-        background-color: #CD5961; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color, and should be same as 'dayPicker a' */
+        background-color: #FFFF8F; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color, and should be same as 'dayPicker a' */
         padding: 3px;
         border: 1px solid black;
         display: none;
@@ -160,7 +160,7 @@ Sat Jul 27: 8:15AM-11:15AM
 <div id="time" class="timeContainer"></div>
 <div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon-Thu</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 202507192315 2025-07-19 23:15 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 202507192322 2025-07-19 23:22 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
