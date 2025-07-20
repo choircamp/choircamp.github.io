@@ -160,7 +160,7 @@ Sat Jul 27: 8:15AM-11:15AM
 <div id="time" class="timeContainer"></div>
 <div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon-Thu</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 202407211147 2024-07-21 11:47 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 202507192315 2025-07-19 23:15 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -275,18 +275,25 @@ var schedule = {
                 , "assignments": ["-Cafeteria", ""]
             }, {
                 "startTime": "0855"
-                , "endTime": "0954"
+                , "endTime": "0944"
                 , "startTimeDisplay": "9 AM"
                 , "endTimeDisplay": ""
-                , "description": "Staff Meeting<br/>(Rehearsal)"
-                , "assignments": ["-Choir Room", ""]
+                , "description": "Eucharist"
+                , "assignments": ["-Centenary Foyer", ""]
             }, {
-                "startTime": "0955"
+                "startTime": "0945"
+                , "endTime": "1010"
+                , "startTimeDisplay": "9:45 AM"
+                , "endTimeDisplay": ""
+                , "description": "Staff Meeting<br/>(Rehearsal)"
+                , "assignments": ["-Gallery", ""]
+            }, {
+                "startTime": "1011"
                 , "endTime": "1039"
-                , "startTimeDisplay": "10 AM"
+                , "startTimeDisplay": "10:15 AM"
                 , "endTimeDisplay": ""
                 , "description": "Finish Assignments"
-                , "assignments": ["-Learn Choir Music", ""]
+                , "assignments": ["", ""]
             }, {
                 "startTime": "1040"
                 , "endTime": "1154"
@@ -335,7 +342,7 @@ var schedule = {
                 , "startTimeDisplay": "6:45"
                 , "endTimeDisplay": "7:25"
                 , "description": "Class"
-                , "assignments": ["AB-Liturgy Class (Coury)", "CD-Show","EG-Choir","FH-Foyer"]
+                , "assignments": ["AB-Liturgy Class (Band Room)", "CD-Show (Stage)","EG-Choir (Gallery)","FH-Choir (Drama)"]
             }, {
                 "startTime": "1925"
                 , "endTime": "1954"
@@ -387,7 +394,7 @@ var schedule = {
                 , "startTimeDisplay": "8:50"
                 , "endTimeDisplay": "9:30"
                 , "description": "Class (1st)"
-                , "assignments": ["AC-Choir", "BD-Foyer", "EF-Gallery", "GH-Show"]
+                , "assignments": ["AC-Choir (Gallery)", "BD-Choir (Drama Room)", "EF-Handbells (Old Choir Room)", "GH-Show (Stage)"]
             }
             , {
                 "startTime": "0930"
@@ -395,7 +402,7 @@ var schedule = {
                 , "startTimeDisplay": " 9:35"
                 , "endTimeDisplay": "10:15"
                 , "description": "Class (2nd)"
-                , "assignments": ["AB-Show", "CD-Classroom", "EG-Choir", "FH-Foyer"]
+                , "assignments": ["AB-Show (Stage)", "CD-Handbells (Theory Room)", "EG-Choir (Gallery)", "FH-Choir (Drama Room)"]
             }
             , {
                 "startTime": "1010"
@@ -411,7 +418,7 @@ var schedule = {
                 , "startTimeDisplay": "10:30"
                 , "endTimeDisplay": "11:10"
                 , "description": "Class (3rd)"
-                , "assignments": ["AB-Classroom", "CD-Show", "EF-Liturgy", "GH-Gallery", "Staff-Choir Room"]
+                , "assignments": ["AB-Handbells (Theory Room)", "CD-Show (Stage)", "EF-Liturgy (Band Room)", "GH-Handbells (Old Choir Room)", "Staff-Gallery"]
             }
             , {
                 "startTime": "1110"
@@ -419,7 +426,7 @@ var schedule = {
                 , "startTimeDisplay": "11:15"
                 , "endTimeDisplay": "11:55"
                 , "description": "Class (4th)"
-                , "assignments": ["AC-Choir", "BD-Foyer", "EF-Show", "GH-Liturgy"]
+                , "assignments": ["AC-Choir (Gallery)", "BD-Choir (Drama Room)", "EF-Show (Stage)", "GH-Liturgy (Band Room)"]
             }
             , {
                 "startTime": "1155"
@@ -435,7 +442,7 @@ var schedule = {
                 , "startTimeDisplay": "12:45"
                 , "endTimeDisplay": " 1:25"
                 , "description": "Class (5th)"
-                , "assignments": ["AB-Show", "CD-Classroom","EG-Choir","FH-Foyer"]
+                , "assignments": ["AB-Show (Stage)", "CD-Handbells (Theory Room)","EG-Choir (Gallery)","FH-Choir (Drama Room)"]
             }
             , {
                 "startTime": "1325"
@@ -443,7 +450,7 @@ var schedule = {
                 , "startTimeDisplay": "1:30"
                 , "endTimeDisplay": "2:10"
                 , "description": "Class (6th)"
-                , "assignments": ["AC-Choir", "BD-Foyer", "EF-Gallery", "GH-Show"]
+                , "assignments": ["AC-Choir (Gallery)", "BD-Choir (Drama Room)", "EF-Handbells (Old Choir Room)", "GH-Show (Stage)"]
             }
             , {
                 "startTime": "1410"
@@ -451,7 +458,7 @@ var schedule = {
                 , "startTimeDisplay": "2:15"
                 , "endTimeDisplay": "2:55"
                 , "description": "Class (7th)"
-                , "assignments": ["AB-Classroom", "CD-Liturgy", "EF-Show", "GH-Gallery", "Staff-Choir"]
+                , "assignments": ["AB-Handbells (Theory Room)", "CD-Liturgy (Band Room)", "EF-Show (Stage)", "GH-Handbells (Old Choir Room)", "Staff-Gallery"]
             }
             , {
                 "startTime": "1450"
@@ -459,7 +466,7 @@ var schedule = {
                 , "startTimeDisplay": "3:00"
                 , "endTimeDisplay": ""
                 , "description": "Break"
-                , "assignments": ["Staff-Choir (Alt)"]
+                , "assignments": ["Staff-Gallery (Alt)"]
             }
             , {
                 "startTime": "1555"
@@ -467,7 +474,7 @@ var schedule = {
                 , "startTimeDisplay": "4:00"
                 , "endTimeDisplay": "5:45"
                 , "description": "Activities"
-                , "assignments": ["Staff-Choir (Alt)"]
+                , "assignments": ["Staff-Gallery (Alt)"]
             }
             , {
                 "startTime": "1755"
@@ -483,7 +490,7 @@ var schedule = {
                 , "startTimeDisplay": "6:45"
                 , "endTimeDisplay": "7:25"
                 , "description": "Class (8th)"
-                , "assignments": ["AB-Liturgy", "CD-Show", "EG-Choir", "FH-Foyer"]
+                , "assignments": ["AB-Liturgy (Band Room)", "CD-Show (Stage)", "EG-Choir (Gallery)", "FH-Choir (Drama Room)"]
             }
             , {
                 "startTime": "1925"
