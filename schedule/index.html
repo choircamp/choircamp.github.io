@@ -160,7 +160,7 @@ Sat Jul 27: 8:15AM-11:15AM
 <div id="time" class="timeContainer"></div>
 <div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon-Thu</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 202507192322 2025-07-19 23:22 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 202507242355 2025-07-25 00:10 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -549,11 +549,12 @@ var schedule = {
                 , "assignments": ["-Church Steps (as usual)"]
             }, {
                 "startTime": "0835"
-                , "endTime": "1129"
+                , "endTime": "1114"
                 , "startTimeDisplay": "Until"
-                , "endTimeDisplay": "11:30"
+                , "endTimeDisplay": "11:15"
                 , "description": "Abbey Church"
-                , "assignments": ["All-Out by 11:15"]
+                , "assignments": ["All-Start out at 11:10"
+                    , "-Empty Church by 11:15"]
                 // , "assignments": ["All-Out by 11:30"
                 //     , "----"
                 //     , "ABCD-Waiting near Bells"
@@ -592,8 +593,7 @@ var schedule = {
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "Lunch"
                 , "description": "Centenary"
-                , "assignments": ["All-Choir Room"
-                    , "-&nbsp;&nbsp;&nbsp;Fri/Sat Psalms"
+                , "assignments": ["All-Gallery"
                     , "Counselors-Stage"]
             }, {
                 "startTime": "1155"
@@ -610,7 +610,7 @@ var schedule = {
                 , "description": "Centenary"
                 , "assignments": ["All-Show"
                 	, "-As long as it takes! :)"
-                    , "-...then Swim..."
+                    , "-...then Nap/Rest..."
                     , "-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...until..."
                 	]
     		}, {
@@ -639,14 +639,21 @@ var schedule = {
                 , "endTime": "2129"
                 , "startTimeDisplay": "8:15"
                 , "endTimeDisplay": ""
-                , "description": "Swim"
+                , "description": "Pool Party!"
                 , "assignments": []
     }, {
                 "startTime": "2130"
-                , "endTime": "2359"
-                , "startTimeDisplay": "After"
+                , "endTime": "2229"
+                , "startTimeDisplay": "10:00"
                 , "endTimeDisplay": ""
-                , "description": "Early bedtime?!"
+                , "description": "Teen Time"
+                , "assignments": []
+    }, {
+                "startTime": "2230"
+                , "endTime": "2359"
+                , "startTimeDisplay": "10:30"
+                , "endTimeDisplay": ""
+                , "description": "All in dorms! :)"
                 , "assignments": []
     }],
     "Friday_Show_in_the_morning_AND_Church_in_the_afternoon": [
