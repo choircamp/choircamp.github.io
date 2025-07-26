@@ -3,11 +3,11 @@ var campShortName = "Choir Camp";
 var campLongName = `${campNamePrefix} ${campShortName}`;
 var campNamePrefixAbbreviated = "AI";
 var campFullName = `${campNamePrefixAbbreviated} ${campShortName}`;
-var campYear = "2025";
+var campYear = "2026";
 var campFullNameWithYear = `${campNamePrefixAbbreviated} ${campShortName} ${campYear}`;
-var campZeroDay = "July 19, "+campYear;
-var campFirstDay = "July 20, "+campYear;
-var campLastDay = "July 26, "+campYear;
+var campZeroDay = "July 18, "+campYear;
+var campFirstDay = "July 19, "+campYear;
+var campLastDay = "July 25, "+campYear;
 
 var directorFirstName = "Charlie";
 var directorLastName = "Rigsby";
