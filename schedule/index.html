@@ -47,24 +47,6 @@
         display: none;
     }
 
-    .dayPicker {
-        white-space: nowrap;
-        margin: 0 0 0 5px;
-        display: none;
-    }
-
-    .dayPicker a {
-    	display: inline-block;
-    	white-space: nowrap;
-        background-color: #FFFF8F;
-        color: black;
-        padding: 1.5em;
-        margin: 0.3em;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-
     .versionNote {
         color: gray;
         font-size: small;
@@ -97,18 +79,36 @@
         text-align: 'center';
     }
 
+    .dayPicker {
+        white-space: nowrap;
+        margin: 0 0 0 5px;
+        display: none;
+    }
+
+    .dayPicker a {
+        display: inline-block;
+        white-space: nowrap;
+        background-color: #98D0DF;
+        color: black;
+        padding: 1.5em;
+        margin: 0.3em;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
     .timeSlotTimesContainer {
         text-align: right;
         font-size: 28pt;
         padding-right: 10px;
         color: black;
-        background-color: #FFFC33; /* coordinated with inProgressTimeSlot and follow-scroll background-color */
+        background-color: #4B92B2; /* coordinated with inProgressTimeSlot and follow-scroll background-color */
         white-space: nowrap;
     }
 
     .inProgressTimeSlot {
         color: black;
-        background-color: #FFFF8F; /* coordinated with follow-scroll and timeSlotTimesContainer background-color */
+        background-color: #006F94; /* coordinated with follow-scroll and timeSlotTimesContainer background-color */
     }
 
     .timeSlotBoundary {
@@ -120,7 +120,7 @@
 
     .follow-scroll {
         color: #000000; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color */
-        background-color: #FFFF8F; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color, and should be same as 'dayPicker a' */
+        background-color: #98D0DF; /* coordinated with timeSlotTimesContainer and inProgressTimeSlot background-color, and should be same as 'dayPicker a' */
         padding: 3px;
         border: 1px solid black;
         display: none;
@@ -160,7 +160,7 @@ Sat Jul 27: 8:15AM-11:15AM
 <div id="time" class="timeContainer"></div>
 <div class="dayPicker"><a id="NowLink" href="javascript:GoToDay();">Now</a><a id="SundayLink" href="javascript:GoToDay('Sunday');">Sun</a><a id="MondayLink" href="javascript:GoToDay('Monday');">Mon-Thu</a><a id="FridayLink" href="javascript:GoToDay('Friday');">Fri</a><a id="SaturdayLink" href="javascript:GoToDay('Saturday');">Sat</a></div>
 <div class="footerNote"></div>
-<div class="versionNote">Version: 202507242355 2025-07-25 00:10 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
+<div class="versionNote">Version: 202607172240 2026-07-17 22:40 (refresh to update)<!-- https://stackoverflow.com/a/13282735/116895 --></div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 if (location.protocol !== 'file:' && location.protocol !== 'https:') { // enforce HTTPS
@@ -222,7 +222,7 @@ var schedule = {
                 , "startTimeDisplay": "1 PM"
                 , "endTimeDisplay": ""
                 , "description": "Setup"
-                , "assignments": ["You-Find a job! :)","Gallery and Foyer-Supplies, Tables, Chairs", "Abbey Dorm Recon-Molly, Rachel, Erin", "Choir Rooms-Jeannie, Jack", "Drama Room-Evelyn, Emily, Sarah H, Sarah S", "Stage-move piano(s) in", "Handbells-Cari, Cindy, Mike, Jana", "Kitchen-Diana,Clem,Debby", "Art Rm-Diana, Rachel", "Kitchen-Clem, Marthe, Debby", "Medical Records-Sarah K, Kylee", "Room Assignments-Charlie, Louise, J.B.", "What else?-<em>Who</em> else? Find a job! :)", ""]
+                , "assignments": ["You-Find a job! :)","Gallery and Foyer-Supplies, Tables, Chairs", "Abbey Dorm Recon-Molly, Erin, Hannah, Emma", "Choir Rooms-Jeannie, Jack", "Drama Room/Stage-Evelyn, Emily", "Handbells-Cari, Jana, Mike, John David", "Art Rm-Diana, Jana", "Kitchen-Clem, Kylee, Debby", "Medical/Dietary-Brittany, Kylee, Jana", "Room Assignments-Louise, JB, Greg", "Choral Binders-Abi & other Counselors", "What else?-<em>Who</em> else? Find a job! :)", ""]
             }, {
                 "startTime": "1455"
                 , "endTime": "1519"
@@ -236,7 +236,7 @@ var schedule = {
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "5 PM"
                 , "description": "Setup"
-                , "assignments": ["Prepare Registration-Cindy and Sarah H, Kylee", "T-Shirts-Juan, Caroline C","Handbell Music-Cari, Mike, Cindy","Fieldhouse Recon-Erin, Thomas","Coury Classroom Recon-Fr. Chuck","Dorm Door Tags-Counselors","Foyer Table/Chairs-Counselors"]
+                , "assignments": ["Prepare Registration-Diana, Emma, Kylee", "T--Shirts Labels-Caroline Cross and Counselors","Choral Binders-Abi & other Counselors","Handbell Music-Cari, Jana, Mike","Fieldhouse Recon-Erin, Quinn","Dorm Door Tags-Counselors","Dorm Prep-Ben, Evan, Michael, John David","Prep Show-Emily, Evelyn, Jeremy"]
             }, {
                 "startTime": "1655"
                 , "endTime": "1754"
@@ -292,7 +292,7 @@ var schedule = {
                 , "endTime": "1039"
                 , "startTimeDisplay": "10:15 AM"
                 , "endTimeDisplay": ""
-                , "description": "Finish Assignments"
+                , "description": "Finish Assignments (And: Pit Rehearsal)"
                 , "assignments": ["", ""]
             }, {
                 "startTime": "1040"
@@ -342,7 +342,7 @@ var schedule = {
                 , "startTimeDisplay": "6:45"
                 , "endTimeDisplay": "7:25"
                 , "description": "Class"
-                , "assignments": ["AB-Liturgy Class (Band Room)", "CD-Show (Stage)","EG-Choir (Gallery)","FH-Choir (Drama)"]
+                , "assignments": ["AB-Liturgy Class (Band Room)", "CD-Show (Stage)","EG-Choir (Choir Rm)","FH-Choir (Drama)"]
             }, {
                 "startTime": "1925"
                 , "endTime": "1954"
@@ -386,7 +386,7 @@ var schedule = {
                 , "startTimeDisplay": "8:30"
                 , "endTimeDisplay": ""
                 , "description": "Morning Prayer"
-                , "assignments": []
+                , "assignments": ["-Fr. Chuck starts<br/>&nbsp;&nbsp;when bells chime."]
             }
             , {
                 "startTime": "0845"
@@ -394,7 +394,7 @@ var schedule = {
                 , "startTimeDisplay": "8:50"
                 , "endTimeDisplay": "9:30"
                 , "description": "Class (1st)"
-                , "assignments": ["AC-Choir (Gallery)", "BD-Choir (Drama Room)", "EF-Handbells (Old Choir Room)", "GH-Show (Stage)"]
+                , "assignments": ["AC-Choir (Choir Rm)", "BD-Choir (Drama Room)", "EF-Handbells (Gallery)", "GH-Show (Stage)"]
             }
             , {
                 "startTime": "0930"
@@ -402,7 +402,7 @@ var schedule = {
                 , "startTimeDisplay": " 9:35"
                 , "endTimeDisplay": "10:15"
                 , "description": "Class (2nd)"
-                , "assignments": ["AB-Show (Stage)", "CD-Handbells (Theory Room)", "EG-Choir (Gallery)", "FH-Choir (Drama Room)"]
+                , "assignments": ["AB-Show (Stage)", "CD-Handbells (Theory Room)", "EG-Choir (Choir Rm)", "FH-Choir (Drama Room)"]
             }
             , {
                 "startTime": "1010"
@@ -418,7 +418,7 @@ var schedule = {
                 , "startTimeDisplay": "10:30"
                 , "endTimeDisplay": "11:10"
                 , "description": "Class (3rd)"
-                , "assignments": ["AB-Handbells (Theory Room)", "CD-Show (Stage)", "EF-Liturgy (Band Room)", "GH-Handbells (Old Choir Room)", "Staff-Gallery"]
+                , "assignments": ["AB-Handbells (Theory Room)", "CD-Show (Stage)", "EF-Liturgy (Band Room)", "GH-Handbells (Gallery)", "Staff-Choir Rm"]
             }
             , {
                 "startTime": "1110"
@@ -426,7 +426,7 @@ var schedule = {
                 , "startTimeDisplay": "11:15"
                 , "endTimeDisplay": "11:55"
                 , "description": "Class (4th)"
-                , "assignments": ["AC-Choir (Gallery)", "BD-Choir (Drama Room)", "EF-Show (Stage)", "GH-Liturgy (Band Room)"]
+                , "assignments": ["AC-Choir (Choir Rm)", "BD-Choir (Drama Room)", "EF-Show (Stage)", "GH-Liturgy (Band Room)"]
             }
             , {
                 "startTime": "1155"
@@ -442,7 +442,7 @@ var schedule = {
                 , "startTimeDisplay": "12:45"
                 , "endTimeDisplay": " 1:25"
                 , "description": "Class (5th)"
-                , "assignments": ["AB-Show (Stage)", "CD-Handbells (Theory Room)","EG-Choir (Gallery)","FH-Choir (Drama Room)"]
+                , "assignments": ["AB-Show (Stage)", "CD-Handbells (Theory Room)","EG-Choir (Choir Rm)","FH-Choir (Drama Room)"]
             }
             , {
                 "startTime": "1325"
@@ -450,7 +450,7 @@ var schedule = {
                 , "startTimeDisplay": "1:30"
                 , "endTimeDisplay": "2:10"
                 , "description": "Class (6th)"
-                , "assignments": ["AC-Choir (Gallery)", "BD-Choir (Drama Room)", "EF-Handbells (Old Choir Room)", "GH-Show (Stage)"]
+                , "assignments": ["AC-Choir (Choir Rm)", "BD-Choir (Drama Room)", "EF-Handbells (Gallery)", "GH-Show (Stage)"]
             }
             , {
                 "startTime": "1410"
@@ -458,7 +458,7 @@ var schedule = {
                 , "startTimeDisplay": "2:15"
                 , "endTimeDisplay": "2:55"
                 , "description": "Class (7th)"
-                , "assignments": ["AB-Handbells (Theory Room)", "CD-Liturgy (Band Room)", "EF-Show (Stage)", "GH-Handbells (Old Choir Room)", "Staff-Gallery"]
+                , "assignments": ["AB-Handbells (Theory Room)", "CD-Liturgy (Band Room)", "EF-Show (Stage)", "GH-Handbells (Gallery)", "Staff-Choir Rm"]
             }
             , {
                 "startTime": "1450"
@@ -466,7 +466,7 @@ var schedule = {
                 , "startTimeDisplay": "3:00"
                 , "endTimeDisplay": ""
                 , "description": "Break"
-                , "assignments": ["Staff-Gallery (Alt)"]
+                , "assignments": ["Staff-Choir Rm (Alt)"]
             }
             , {
                 "startTime": "1555"
@@ -474,7 +474,7 @@ var schedule = {
                 , "startTimeDisplay": "4:00"
                 , "endTimeDisplay": "5:45"
                 , "description": "Activities"
-                , "assignments": ["Staff-Gallery (Alt)"]
+                , "assignments": ["Staff-Choir Rm (Alt)"]
             }
             , {
                 "startTime": "1755"
@@ -490,7 +490,7 @@ var schedule = {
                 , "startTimeDisplay": "6:45"
                 , "endTimeDisplay": "7:25"
                 , "description": "Class (8th)"
-                , "assignments": ["AB-Liturgy (Band Room)", "CD-Show (Stage)", "EG-Choir (Gallery)", "FH-Choir (Drama Room)"]
+                , "assignments": ["AB-Liturgy (Band Room)", "CD-Show (Stage)", "EG-Choir (Choir Rm)", "FH-Choir (Drama Room)"]
             }
             , {
                 "startTime": "1925"
@@ -593,7 +593,7 @@ var schedule = {
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "Lunch"
                 , "description": "Centenary"
-                , "assignments": ["All-Gallery"
+                , "assignments": ["All-Choir Rm"
                     , "Counselors-Stage"]
             }, {
                 "startTime": "1155"
@@ -770,21 +770,21 @@ var schedule = {
                 , "startTimeDisplay": ""
                 , "endTimeDisplay": ""
                 , "description": "Yayyy! :)"
-                , "assignments": ["-We did it!", "-(briefest pause...)", "-Ok. Back to work!"]
+                , "assignments": ["-We did it! 🎉🥳", "-(briefest pause...)", "-Ok. Back to work!"]
             }, {
                 "startTime": "1335"
                 , "endTime": "1554"
                 , "startTimeDisplay": "Until"
                 , "endTimeDisplay": "Done"
                 , "description": "Teardown"
-                , "assignments": ["-Pianos Away", "-Stage Restored", "-Gallery Restored", "-Bells Stowed", "-Foyer Restored", "-Dorms Cleaned", "-Fleet Packed", "-Kitchen Cleaned", "-etc, etc (ask!)"]
+                , "assignments": ["-Pianos Away", "-Stage Restored", "-Gallery/Choir Restored", "-Bells Stowed", "-Foyer Restored", "-Dorms Cleaned", "-Fleet Packed", "-Kitchen Cleaned", "-etc, etc (ask!)"]
             }, {
                 "startTime": "1555"
                 , "endTime": "1754"
                 , "startTimeDisplay": ""
                 , "endTimeDisplay": ""
                 , "description": "Pool"
-                , "assignments": ["-Relax!", "-Dubious pride!", "-Start planning..."]
+                , "assignments": ["-Relax!", "-Dubious pride!", "-Start planning next year..."]
             }, {
                 "startTime": "1755"
                 , "endTime": "2000"
